@@ -1,0 +1,107 @@
+{
+  "schema_version": "0.2.7",
+  "record_metadata": {
+    "uuid": "da2399b2-6b36-4a1b-bea1-f46265c76b2e",
+    "record_created_on": "2025-11-19",
+    "record_created_by": "Alieva, Aibaniz",
+    "last_edited_on": "2025-11-19",
+    "interviewed": false
+  },
+  "project": {
+    "title": "The Socio-Cultural Life of Sociological Concepts: Arab Contributions to Global Theory",
+    "abbr": "",
+    "type": "project",
+    "ref": [],
+    "date": [{ "from": "2025", "to": "" }],
+    "maintained": true,
+    "websites": [
+        "https://arabicsociology.net/projects/test-project",
+        "https://arabicsociology.net"
+    ],
+    "project_desc": "The project explores how sociological concepts have been used in various times and places and thus began to be understood in different ways. The project is designed to produce a critical, historically informed, and comparative lexicon of approximately 60 key concepts as used in Arabic and English and, if pertinent, French—focusing on the Arab World and the two main colonial languages of the region. ",
+    "places": [
+      {
+        "place_name": {
+          "text": "Berlin",
+          "ref": ["https://www.geonames.org/2950159/berlin.html"]
+        },
+        "coordinates": { "lat": "52.52437", "lng": "13.41053" }
+      }
+    ],
+    "lang": ["eng"],
+    "related_institutions": [
+      {
+        "relation_type": "host",
+        "org_name": {
+          "text": "Freie Universität Berlin",
+          "ref": [
+            "https://ror.org/046ak2485",
+            "https://www.wikidata.org/wiki/Q153006"
+          ]
+        },
+        "websites": ["https://www.fu-berlin.de/"]
+      }
+    ],
+    "related_entities": [],
+    "people": [
+      {
+        "pers_name": {
+          "text": "",
+          "ref": [
+            "https://www.wikidata.org/wiki/Q113783280",
+            "https://d-nb.info/gnd/1015932363"
+          ]
+        },
+        "roles": ["supervision"],
+        "websites": [
+          "https://www.geschkult.fu-berlin.de/en/e/islamwiss/personen/profs/Zemmin/index.html"
+        ]
+      },
+      {
+        "pers_name": {
+          "text": "",
+          "ref": [
+            "https://www.wikidata.org/wiki/Q112514168",
+            "https://d-nb.info/gnd/1141210223"
+          ]
+        },
+        "roles": ["supervision"],
+        "websites": [
+          "https://www.religiousstudies.pitt.edu/people/mohammed-bamyeh"
+        ]
+      }
+    ],
+    "research_data": {
+      "lang": ["ara"],
+      "sustainability_plan": {
+        "project_website": 1.0,
+        "GitHub": 0.0,
+        "data_accessibility": 1,
+        "webhosting": 1.0,
+        "publications": 0.0,
+        "publication_count": 0,
+        "open_access_count": 0
+      },
+      "publications": { "open_access": 0, "licensing": [] },
+      "data": {
+        "datatypes": [], "repositories": [] }
+    },
+    "stack": {
+      "database": [],
+      "backend": [],
+      "frontend": [],
+      "tools": [],
+      "languages": []
+    },
+    "policies": [{ "description": "", "ref": [] }],
+    "keywords": [
+      "arabic_studies",
+      "corpus_resource",
+      "geodata",
+      "lexicon",
+      "map"
+    ],
+    "category": "digital_preservation",
+    "comment": ""
+  }
+}
