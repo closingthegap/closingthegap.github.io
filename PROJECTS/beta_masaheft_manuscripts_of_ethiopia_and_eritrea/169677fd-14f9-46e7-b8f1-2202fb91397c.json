@@ -167,6 +167,11 @@
         "relation_type": "cooperation",
         "title": "Corpus dei Manoscritti Copti Letterari",
         "uuid": "c4f41a6d-9fb9-4c31-85f0-b66acfe41289"
+      },
+      {
+        "relation_type": "sibling",
+        "title": "English-Chinese Glossary of Manuscriptology",
+        "uuid": "3affc4d2-7913-4893-927c-8c32784b6929"
       }
     ],
     "people": [

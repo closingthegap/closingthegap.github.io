@@ -151,6 +151,11 @@
         "relation_type": "cooperation",
         "title": "Coptic Scriptorium: Digital Research in Coptic Language and Literature",
         "uuid": "0250aa46-2fc2-44cb-8b08-87b40d1fc3a5"
+      },
+      {
+        "relation_type": "sibling",
+        "title": "English-Chinese Glossary of Manuscriptology",
+        "uuid": "3affc4d2-7913-4893-927c-8c32784b6929"
       }
     ],
     "people": [

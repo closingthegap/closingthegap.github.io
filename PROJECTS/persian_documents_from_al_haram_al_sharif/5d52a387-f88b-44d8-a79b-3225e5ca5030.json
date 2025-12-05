@@ -127,6 +127,11 @@
         "relation_type": "sibling",
         "title": "Methoden der Bildverarbeitung zur Bestimmung von visuellen Manuskript- und Zeichenmerkmalen",
         "uuid": "eb8e91fe-952e-48b7-af0d-c026ebe37826"
+      },
+      {
+        "relation_type": "sibling",
+        "title": "English-Chinese Glossary of Manuscriptology",
+        "uuid": "3affc4d2-7913-4893-927c-8c32784b6929"
       }
     ],
     "people": [
