@@ -142,6 +142,11 @@
         "relation_type": "cooperation",
         "title": "Biblia Arabica: The Bible in Arabic among Jews, Christians and Muslims",
         "uuid": "c523675a-0e54-4d1e-8d08-2395d58323e3"
+      },
+      {
+        "relation_type": "sibling",
+        "title": "English-Chinese Glossary of Manuscriptology",
+        "uuid": "3affc4d2-7913-4893-927c-8c32784b6929"
       }
     ],
     "people": [

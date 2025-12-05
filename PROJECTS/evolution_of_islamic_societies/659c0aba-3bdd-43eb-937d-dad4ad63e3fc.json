@@ -137,6 +137,11 @@
         "relation_type": "cooperation",
         "title": "OpenITI_NgramReader",
         "uuid": "d1d73911-81dc-4a65-bf1b-162f7fb2e84e"
+      },
+      {
+        "relation_type": "sibling",
+        "title": "English-Chinese Glossary of Manuscriptology",
+        "uuid": "3affc4d2-7913-4893-927c-8c32784b6929"
       }
     ],
     "people": [

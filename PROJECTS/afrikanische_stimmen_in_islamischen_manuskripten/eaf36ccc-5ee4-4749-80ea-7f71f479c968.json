@@ -140,6 +140,11 @@
         "relation_type": "cooperation",
         "title": "Hill Museum & Manuscript Library",
         "uuid": "52ce273e-7935-42fd-82e8-806f6aaa3049"
+      },
+      {
+        "relation_type": "sibling",
+        "title": "English-Chinese Glossary of Manuscriptology",
+        "uuid": "3affc4d2-7913-4893-927c-8c32784b6929"
       }
     ],
     "people": [

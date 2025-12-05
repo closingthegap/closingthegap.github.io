@@ -54,6 +54,11 @@
         "relation_type": "sibling",
         "title": "Audition Certificates Platform",
         "uuid": "b333a11d-b9fc-4379-9e21-fbddfa9500b1"
+      },
+      {
+        "relation_type": "sibling",
+        "title": "English-Chinese Glossary of Manuscriptology",
+        "uuid": "3affc4d2-7913-4893-927c-8c32784b6929"
       }
     ],
     "people": [
