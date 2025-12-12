@@ -570,12 +570,12 @@
 		vegaEmbed('#vis2', spec2, {});
 		vegaEmbed('#vis1', spec1, {});
 		const res = await fetch(
-			'https://raw.githubusercontent.com/M-L-D-H/Closing-The-Gap-In-Non-Latin-Script-Data/master/PROJECTS.json'
+			'https://raw.githubusercontent.com/closingthegap/closingthegap.github.io/master/PROJECTS.json'
 		);
 		const allProjects = await res.json();
 
 		const rawBasePath =
-			'https://raw.githubusercontent.com/M-L-D-H/Closing-The-Gap-In-Non-Latin-Script-Data/master';
+			'https://raw.githubusercontent.com/closingthegap/closingthegap.github.io/master';
 
 		const rawProjects = await Promise.all(
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
