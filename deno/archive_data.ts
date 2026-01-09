@@ -24,7 +24,7 @@ function sortTitles(a: Record<string, unknown>, b: Record<string, unknown>): 1 |
 //
 
 const templateRes = await fetch(
-	'https://raw.githubusercontent.com/M-L-D-H/Closing-The-Gap-In-Non-Latin-Script-Data/master/TEMPLATES/project.json'
+	'https://raw.githubusercontent.com/closingthegap/closingthegap.github.io/master/TEMPLATES/project.json'
 );
 const template = await templateRes.json();
 await Deno.writeTextFile('./src/data/TEMPLATES/project.json', JSON.stringify(template));
@@ -34,7 +34,7 @@ await Deno.writeTextFile('./src/data/TEMPLATES/project.json', JSON.stringify(tem
 //
 
 const keywordsRes = await fetch(
-	'https://raw.githubusercontent.com/M-L-D-H/Closing-The-Gap-In-Non-Latin-Script-Data/master/KEYWORDS/KEYWORDS.json'
+	'https://raw.githubusercontent.com/closingthegap/closingthegap.github.io/master/KEYWORDS/KEYWORDS.json'
 );
 const keywords: Record<string, string[]> = await keywordsRes.json();
 await Deno.writeTextFile('./src/data/KEYWORDS.json', JSON.stringify(keywords));
@@ -44,7 +44,7 @@ await Deno.writeTextFile('./src/data/KEYWORDS.json', JSON.stringify(keywords));
 //
 
 const projectsRes = await fetch(
-	'https://raw.githubusercontent.com/M-L-D-H/Closing-The-Gap-In-Non-Latin-Script-Data/master/PROJECTS.json'
+	'https://raw.githubusercontent.com/closingthegap/closingthegap.github.io/master/PROJECTS.json'
 );
 const projects: Record<string, Record<string, string>> = await projectsRes.json();
 await Deno.writeTextFile('./src/data/PROJECTS.json', JSON.stringify(projects));
@@ -58,7 +58,7 @@ const projectEntries: [string, Record<string, string>][] = Object.entries(projec
 const urls: string[] = [];
 for (const [id, details] of projectEntries) {
 	urls.push(
-		`https://raw.githubusercontent.com/M-L-D-H/Closing-The-Gap-In-Non-Latin-Script-Data/master${details.path}${id}.json`
+		`https://raw.githubusercontent.com/closingthegap/closingthegap.github.io/master${details.path}${id}.json`
 	);
 }
 
