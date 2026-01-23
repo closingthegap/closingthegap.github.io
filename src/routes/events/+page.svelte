@@ -48,7 +48,9 @@
 				.sort((a, b) => a.rawDate - b.rawDate);
 
 			upcoming = events.filter((e) => e.rawDate >= today);
-			past = events.filter((e) => e.rawDate < today);
+			past = events
+			.filter((e) => e.rawDate < today)
+			.sort((a, b) => b.rawDate - a.rawDate); // latest → earliest
 		} catch (err) {
 			console.error('Error loading events:', err);
 		}
