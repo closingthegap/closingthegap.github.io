@@ -53,16 +53,35 @@
 				.sort((a, b) => a.rawDate - b.rawDate);
 
 			upcoming = allConfs.filter((c) => c.rawDate >= today);
-			past = allConfs.filter((c) => c.rawDate < today);
+			past = allConfs
+			.filter((c) => c.rawDate < today)
+			.sort((a, b) => b.rawDate - a.rawDate);
 
+			function parsePublicationDate(yearStr) {				
+				if (!yearStr) return null;
+				// "October 2025" → new Date("2025-10-01")
+				const [month, year] = yearStr.trim().split(/\s+/);
+				const dt = new Date(`${month} 1, ${year}`);
+				return isNaN(dt.getTime()) ? null : dt;
+			}
+			
 			publications = data
-				.filter((row) => row.Type?.toLowerCase() === 'publication')
-				.map((p) => ({
-					title: p.Title,
-					author: p.Author,
-					year: p.Year,
-					link: p.Link
-				}));
+			.filter((row) => row.Type?.toLowerCase() === 'publication')
+			.map((p) => {
+				const rawDate = parsePublicationDate(p.Year);
+				return (
+					rawDate && {
+						title: p.Title,
+						author: p.Author,
+						year: p.Year,
+						link: p.Link,
+						rawDate
+					}
+				);
+			})
+			.filter(Boolean)
+			.sort((a, b) => b.rawDate - a.rawDate); // latest → earliest
+
 		} catch (err) {
 			console.error('Error loading research data:', err);
 		}
