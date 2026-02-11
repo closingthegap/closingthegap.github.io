@@ -46,7 +46,7 @@
 
 	function fixUrl(url: string): string {
 		const prefix =
-			'https://github.com/M-L-D-H/Closing-The-Gap-In-Non-Latin-Script-Data/blob/master/PROJECTS/';
+			'https://github.com/closingthegap/closingthegap.github.io/tree/master/PROJECTS/';
 		const suffix = url.split('/PROJECTS/')[1];
 		return prefix + suffix;
 	}

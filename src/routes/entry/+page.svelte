@@ -47,7 +47,7 @@
 		)!;
 		const selectedProjData: JsonStuff = selectedEntry[1];
 
-		jsonLink = `https://github.com/M-L-D-H/Closing-The-Gap-In-Non-Latin-Script-Data/tree/master${selectedProj.path}${id}.json`;
+		jsonLink = `https://github.com/closingthegap/closingthegap.github.io/tree/master${selectedProj.path}${id}.json`;
 		title = selectedProjData.project.title;
 		places = selectedProjData.project.places;
 		langs = selectedProjData.project.lang;
