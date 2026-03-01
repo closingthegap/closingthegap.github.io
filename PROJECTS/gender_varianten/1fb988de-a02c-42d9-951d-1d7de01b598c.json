@@ -4,7 +4,7 @@
     "uuid": "1fb988de-a02c-42d9-951d-1d7de01b598c",
     "record_created_on": "2024-07-12",
     "record_created_by": "Werner, Christoph",
-    "last_edited_on": "2025-03-20",
+    "last_edited_on": "2026-03-01",
     "interviewed": false
   },
   "project": {
@@ -191,7 +191,7 @@
         "pers_name": { "text": "Mense, Sebastian", "ref": [] },
         "roles": ["formal analysis", "investigation"],
         "websites": [
-          "https://www.eh-darmstadt.de/hochschule/personenverzeichnis/mense/"
+          "https://www.eh-darmstadt.de/en/forschung/institute/tied/team/"
         ]
       }
     ],
