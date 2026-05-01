@@ -50,6 +50,11 @@
 			class:underline={$page.route.id === '/events'}>Events</a
 		>
 		<a
+			href="{base}/workshop/"
+			class="underline-offset-2 hover:underline"
+			class:underline={$page.route.id === '/workshop'}>Workshop</a
+		>
+		<a
 			href="{base}/contribute/"
 			class="underline-offset-2 hover:underline"
 			class:underline={$page.route.id === '/contribute'}>Contribute</a
