@@ -67,6 +67,8 @@
 				Beyond the Book: Digital Research, Presentation, and Sustainability
 			</h1>
 
+			<h2 class="mb-3 text-xl font-medium">September 21–22, 2026</h2>
+
 			<p class="mb-3 text-gray-800">
 				The workshop explores how digital research, particularly in non-Latin
 				script contexts, can be produced, presented, and sustained beyond traditional

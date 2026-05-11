@@ -26,28 +26,37 @@
 	let loading = true;
 
 	onMount(() => {
-		// Do we even have a hash? If not, redirect upward
 		const hash = window.location.hash;
-		if (!hash || hash.length < 2) window.location.href = '..';
+
+		if (!hash || hash.length < 2) {
+			window.location.href = '..';
+			return;
+		}
 
 		const listData = projectsRaw as Record<string, Record<string, string>>;
-
-		// Ensure hash points to an actual project ID; else redirect upward
 		const id = hash.slice(1);
 		const selectedProj = listData[id];
-		if (!selectedProj) window.location.href = '..';
+
+		if (!selectedProj) {
+			window.location.href = '..';
+			return;
+		}
 
 		const entries = entriesRaw as [string, JsonStuff][];
 
-		// Find the relevant project data
 		const selectedEntry = entries.find(
-			([url]) =>
-				url ===
-				`https://raw.githubusercontent.com/M-L-D-H/Closing-The-Gap-In-Non-Latin-Script-Data/master${selectedProj.path}${id}.json`
-		)!;
+			([, data]) => data.record_metadata.uuid === id
+		);
+
+		if (!selectedEntry) {
+			window.location.href = '..';
+			return;
+		}
+
 		const selectedProjData: JsonStuff = selectedEntry[1];
 
 		jsonLink = `https://github.com/closingthegap/closingthegap.github.io/tree/master${selectedProj.path}${id}.json`;
+
 		title = selectedProjData.project.title;
 		places = selectedProjData.project.places;
 		langs = selectedProjData.project.lang;
