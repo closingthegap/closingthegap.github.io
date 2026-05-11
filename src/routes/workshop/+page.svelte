@@ -246,6 +246,9 @@
 				<p class="mt-4 font-bold">Submission deadline: July 15, 2026</p>
 
 				<p>To submit an abstract or register to attend, please use the form above.</p>
+
+				<br />
+				<p>The event is funded by the Open Science Ambassador-Program of the Berlin University Alliance.</p>
 			</div>
 		</section>
 	</div>
