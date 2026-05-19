@@ -1,0 +1,124 @@
+{
+  "schema_version": "0.2.7",
+  "record_metadata": {
+    "uuid": "e42f47f9-f4cd-4d8a-8b71-fdcb527056b4",
+    "record_created_on": "2026-05-19",
+    "record_created_by": "Alieva, Aibaniz",
+    "last_edited_on": "2026-05-19",
+    "interviewed": false
+  },
+  "project": {
+    "title": "Early Chinese Periodicals Online",
+    "abbr": "ECPO",
+    "type": "project",
+    "ref": [],
+    "date": [{ "from": "2013", "to": "" }],
+    "maintained": false,
+    "websites": [
+      "https://ecpo.cats.uni-heidelberg.de/ecpo/"
+    ],
+    "project_desc": "The ECPO database provides open access to material from several important digital collections of the early Chinese press. It combines what “extensive” and “intensive” approaches to China’s early periodicals. The extensive approach comprises a comprehensive catalog and record of Republican-era art and literary periodicals. In the intensive approach we not only record bibliographic information, but provide digital cover-to-cover copies of entire runs of periodicals together with an in-depth analysis of their complete contents (article, image, advertisement) together with structured meta-data.",
+    "places": [
+      {
+        "place_name": {
+          "text": "Heidelberg",
+          "ref": ["https://www.geonames.org/2907911/heidelberg.html"]
+        },
+        "coordinates": { "lat": "49.40768", "lng": "8.69079" }
+      }
+    ],
+    "lang": ["eng"],
+    "related_institutions": [
+      {
+        "relation_type": "host",
+        "org_name": {
+          "text": "Heidelberg University",
+          "ref": [
+            "https://ror.org/038t36y30",
+            "https://www.wikidata.org/wiki/Q151510"]
+        },
+        "websites": ["https://www.uni-heidelberg.de/en"]
+      },
+      {
+        "relation_type": "cooperation",
+        "org_name": {
+          "text": "Academia Sinica",
+          "ref": [
+            "https://ror.org/05bxb3784",
+            "https://www.wikidata.org/wiki/Q337266"]
+        },
+        "websites": ["https://www.sinica.edu.tw/en"]
+      }
+    ],
+    "related_entities": [],
+    "people": [
+      {
+        "pers_name": {
+          "text": "",
+          "ref": [
+            "https://d-nb.info/gnd/138901244",
+            "https://www.wikidata.org/wiki/Q63226672"
+          ]
+        },
+        "roles": ["supervision"],
+        "websites": [
+          "https://profiles.laps.yorku.ca/profiles/judge/"
+        ]
+      },
+      {
+        "pers_name": {
+          "text": "",
+          "ref": [
+            "https://orcid.org/0000-0002-7867-3120",
+            "https://d-nb.info/gnd/115659420",
+            "https://www.wikidata.org/wiki/Q807558"
+          ]
+        },
+        "roles": ["supervision"],
+        "websites": [
+          "https://www.uni-heidelberg.de/en/research/research-profile/fields-of-focus/field-of-focus-iii/research-activities/heidelberg-center-for-digital-humanities/directorate-heidelberg-center-digital-humanities"
+        ]
+      },
+    {
+        "pers_name": {
+          "text": "",
+          "ref": ["https://www.wikidata.org/wiki/Q10856228"]
+        },
+        "roles": ["supervision"],
+        "websites": [
+          "https://www.hcts.uni-heidelberg.de/en/centre/people-a-z/matthias-arnold"
+        ]
+      }    
+    ],
+    "research_data": {
+      "lang": ["zho"],
+      "sustainability_plan": {
+        "project_website": 1.0,
+        "GitHub": 1.0,
+        "data_accessibility": 1.0,
+        "webhosting": 0.5,
+        "publications": 1.0,
+        "publication_count": 43,
+        "open_access_count": 12
+      },
+      "publications": { "open_access": 0, "licensing": [""] },
+      "data": { "datatypes": [], "repositories": [] }
+    },
+    "stack": {
+      "database": [],
+      "backend": [],
+      "frontend": [],
+      "tools": [],
+      "languages": []
+    },
+    "policies": [{ "description": "", "ref": [] }],
+    "keywords": [
+      "catalog",
+      "digital_preservation",
+      "history_studies",
+      "image"
+    ],
+    "category": "digital_preservation",
+    "comment": ""
+  }
+}
