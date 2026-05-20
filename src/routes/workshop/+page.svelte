@@ -78,7 +78,7 @@
 			<p class="mb-3 font-medium">Submission deadline: July 15, 2026</p>
 
             <p class="text-gray-800">
-	            Registration is required for all participants. To submit an abstract or register to attend, please use the form below.
+	            Registration is required for all participants. Please note that the workshop is on-site only and will not be held in a hybrid format. To submit an abstract or register to attend, please use the form below.
             </p>
 		</section>
 
