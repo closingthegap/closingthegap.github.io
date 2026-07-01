@@ -12,12 +12,12 @@
     "abbr": "MBT",
     "type": "project",
     "ref": [],
-    "date": [{ "from": "2024", "to": "" }],
+    "date": [{ "from": "2024", "to": "2026" }],
     "maintained": true,
     "websites": [
       "https://www.slavistik.uni-freiburg.de/personal/univ-prof-dr-achim-rabus"
     ],
-    "project_desc": "The following project is meant to improve softwares skills of Transkribus in modern Bulgarian. Transkribus is about to get enabled to read Bulgarian handwritten texts from the 1960s until today. Since the start of the project the number of Bulgarian words recognized by the current model reached up to 55.000. It is now able to recognise some whole sentences without making mistakes. The current error quote is calculated by about 6%. At the end it is planned to reach up to 100.000 Bulgarian words trained by Transkribus. The final model will be published on Transkribus.",
+    "project_desc": "This first version of a generic model for handwritten modern Bulgarian was trained at the Slavic Department in Freiburg im Breisgau. Synthetic data (text formatted with handwriting fonts) was used to complement our handwritten Ground Truth data. Handwritten texts from the 1960s to the present have been provided by several organizations and individuals. A small number of Bulgarian texts which represent an earlier version of Bulgarian orthography were used. The content of the provided text data differed strongly. The model is now accessible at Transkribus.",
     "places": [
       {
         "place_name": {
