@@ -1,8 +1,4 @@
 <script>
-	// --- Interactive programme data --------------------------------------
-	// Accurate run-of-show sourced from the workshop programme (Sept 21–22, 2026).
-	// Only people contributing to the workshop appear here (keynotes, presenters,
-	// introducers, panel chairs). No attendee information is included.
 
 	const sessions = [
 		{
@@ -288,9 +284,16 @@
 		<!-- Interactive Programme -->
 		<section>
 			<h2 class="mb-1.5 border-b border-ctgblue pb-2 text-xl font-medium">Workshop Programme</h2>
-			<p class="mb-5 text-sm text-gray-700">
-				Select a session below, then open a talk to read its abstract.
-			</p>
+			<div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+				<p class="text-sm text-gray-700">Select a session below, then open a talk to read its abstract.</p>
+				<a
+					href="/Beyond-the-Book-Programme.pdf"
+					download
+					class="inline-flex shrink-0 items-center gap-2 rounded-md border border-ctgblue bg-ctgorange px-4 py-2 text-sm font-medium text-ctgblue hover:underline"
+				>
+					<span aria-hidden="true">⭳</span> Download programme (PDF)
+				</a>
+			</div>
 
 			<!-- Session tabs -->
 			<div class="mb-6 flex flex-col gap-2 sm:flex-row" role="tablist" aria-label="Workshop sessions">
