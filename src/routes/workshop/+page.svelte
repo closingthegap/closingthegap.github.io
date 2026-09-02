@@ -466,7 +466,8 @@
 					<h3 class="mb-1 text-sm font-semibold uppercase tracking-wide text-ctgtan">Venue</h3>
 					<p class="text-gray-800">
 						Freie Universität Berlin<br />
-						Otto-von-Simson-Straße 7<br />
+						Seminarzentrum L116<br />
+						Otto-von-Simson-Straße 26<br />
 						14195 Berlin, Germany
 					</p>
 				</div>
