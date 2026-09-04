@@ -270,10 +270,10 @@
 				<div>
 					<h2 class="mb-1 text-lg font-semibold text-ctgblue">Registration is now closed</h2>
 					<p class="text-gray-800">
-						We have reached full capacity for the workshop. Thank you to everyone who registered—we
+						We have reached full capacity for the workshop. Thank you to everyone who registered. We
 						look forward to welcoming our confirmed participants to Freie Universität Berlin. For any
 						enquiries, please <a
-							href="https://closingthegap.github.io/contribute/"
+							href="mailto:j.sido.bozan@fu-berlin.de"
 							class="font-medium text-ctgblue underline hover:text-ctgorange">get in touch</a
 						>.
 					</p>
