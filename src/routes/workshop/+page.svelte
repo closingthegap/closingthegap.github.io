@@ -11,28 +11,28 @@
 			schedule: [
 				{
 					type: 'logistics',
-					time: '13:00 – 13:30',
+					time: '14:00 – 14:30',
 					label: 'Registration & Welcome Coffee',
 					detail: 'Arrival and informal networking'
 				},
 				{
 					type: 'logistics',
-					time: '13:30 – 14:00',
+					time: '14:30 – 15:00',
 					label: 'Opening Remarks',
 					detail: 'Introduction to the workshop aims, themes, and programme'
 				},
 				{
 					type: 'keynote',
-					time: '14:00 – 15:00',
+					time: '15:00 – 16:00',
 					name: 'Prof. Dr. Ingo Scholtes',
 					affiliation:
 						'Machine Learning for Complex Networks, Center for Artificial Intelligence and Data Science (CAIDAS), Julius-Maximilians-Universität Würzburg',
 					link: 'https://www.caidas.uni-wuerzburg.de/ml4nets/team/prof-dr-ingo-scholtes/'
 				},
-				{ type: 'break', time: '15:00 – 15:15', label: 'Coffee break' },
+				{ type: 'break', time: '16:00 – 16:15', label: 'Coffee break' },
 				{
 					type: 'talk',
-					time: '15:15 – 15:40',
+					time: '16:15 – 16:40',
 					speaker: 'Maida Farooq',
 					institution: 'Martin Luther University Halle-Wittenberg',
 					link: 'https://bibliothek.uni-halle.de/blog/mitarbeiter-in/maida-farooq-buttar/',
@@ -48,7 +48,7 @@
 				},
 				{
 					type: 'talk',
-					time: '15:40 – 16:05',
+					time: '16:40 – 17:05',
 					speaker: 'Marcus Pöckelmann',
 					institution: 'Freie Universität Berlin',
 					link: 'https://www.geschkult.fu-berlin.de/e/compas/mitarbeiter_innen/drittmittel/marcus-poeckelmann/index.html',
@@ -61,7 +61,7 @@
 				},
 				{
 					type: 'panel',
-					time: '16:05 – 16:35',
+					time: '17:05 – 17:35',
 					label: 'Panel Discussion — NLP',
 					participants: 'Scholtes, Farooq, and Pöckelmann'
 				}
