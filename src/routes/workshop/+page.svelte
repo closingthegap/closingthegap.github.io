@@ -27,6 +27,9 @@
 					name: 'Prof. Dr. Ingo Scholtes',
 					affiliation:
 						'Machine Learning for Complex Networks, Center for Artificial Intelligence and Data Science (CAIDAS), Julius-Maximilians-Universität Würzburg',
+					introducedBy: 'Prof. Dr. Hubert Mara',
+					introducedByLink:
+						'https://www.ada.fu-berlin.de/dh-fu/Personen/Mara/index.html',
 					link: 'https://www.caidas.uni-wuerzburg.de/ml4nets/team/prof-dr-ingo-scholtes/'
 				},
 				{ type: 'break', time: '16:00 – 16:15', label: 'Coffee break' },
