@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { JsonStuff } from '$lib/utils.svelte';
 	import entriesRaw from '../../data/ENTRIES.json';
 
@@ -44,11 +45,9 @@
 		return false;
 	}
 
-	function fixUrl(url: string): string {
-		const prefix =
-			'https://github.com/closingthegap/closingthegap.github.io/tree/master/PROJECTS/';
-		const suffix = url.split('/PROJECTS/')[1];
-		return prefix + suffix;
+	function entryUrl(url: string): string {
+		const uuid = url.split('/').pop()!.replace(/\.json$/, '');
+		return `${base}/entry/#${uuid}`;
 	}
 </script>
 
@@ -91,7 +90,7 @@
 						{/each}
 					{:else}
 						<td class="border-b border-r border-slate-800 px-2 py-0.5"
-							><a href={fixUrl(url)} target="_blank" rel="noreferrer"
+							><a href={entryUrl(url)}
 								>{truncateTitle(entry.project.title)}</a
 							></td
 						>

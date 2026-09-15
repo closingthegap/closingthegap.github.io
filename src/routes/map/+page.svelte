@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Svelte
 	import { onMount, onDestroy } from 'svelte';
+	import { base } from '$app/paths';
 
 	// Leaflet
 	import type { Map } from 'leaflet';
@@ -24,9 +25,6 @@
 
 	let mapElement: HTMLElement;
 	let map: Map;
-
-	const jsonUrlPrefix =
-		'https://github.com/closingthegap/closingthegap.github.io/tree/master/PROJECTS/';
 
 	const placesMap: Record<string, PlaceData> = {};
 
@@ -53,7 +51,8 @@
 
 		for (const [url, data] of entries) {
 			const places = filterPlaces(data.project.places);
-			const jsonUrl = `${jsonUrlPrefix}${url.split('/PROJECTS/')[1]}`;
+			const uuid = url.split('/').pop()!.replace(/\.json$/, '');
+			const entryUrl = `${base}/entry/#${uuid}`;
 
 			for (const place of places) {
 				const key = place.coordinates.lat.split('.')[0] + place.coordinates.lng.split('.')[0];
@@ -61,13 +60,13 @@
 				if (placesMap[key]) {
 					placesMap[key].projects.push({
 						title: data.project.title,
-						url: jsonUrl
+						url: entryUrl
 					});
 				} else {
 					const initial: PlaceData = {
 						lat: place.coordinates.lat,
 						lng: place.coordinates.lng,
-						projects: [{ title: data.project.title, url: jsonUrl }]
+						projects: [{ title: data.project.title, url: entryUrl }]
 					};
 
 					placesMap[key] = initial;
@@ -85,8 +84,6 @@
 					(project) =>
 						`<a
 							href=${project.url}
-							target="_blank"
-							rel="noreferrer"
 							class="font-fira">${project.title}</a
 						>`
 				)
