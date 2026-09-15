@@ -291,7 +291,7 @@
 						class="font-medium hover:underline"
 						href="https://www.geschkult.fu-berlin.de/e/semiarab/arabistik/index.html"
 						target="_blank"
-						rel="noreferrer">Seminar for Semitic and Arabic Studies</a
+						rel="noreferrer">Institute for Arabic Studies</a
 					>
 				</li>
 			</ul>
