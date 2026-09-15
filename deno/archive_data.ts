@@ -75,6 +75,43 @@ entries = entries.sort((a, b) => sortTitles(a[1], b[1]));
 await Deno.writeTextFile('./src/data/ENTRIES.json', JSON.stringify(entries));
 
 //
+// Fetch and save blog posts from ctg.hypotheses.org (WordPress REST API)
+//
+// The site sits behind the Anubis bot filter, which challenges browser user
+// agents and lets other user agents through. Keep the user agent non-browser.
+//
+
+const stripHtml = (html: string): string =>
+	html
+		.replace(/<[^>]*>/g, '')
+		.replace(/&nbsp;/g, ' ')
+		.replace(/&hellip;/g, '\u2026')
+		.replace(/&#8217;/g, '\u2019')
+		.replace(/&#8220;/g, '\u201c')
+		.replace(/&#8221;/g, '\u201d')
+		.replace(/&amp;/g, '&')
+		.replace(/\s+/g, ' ')
+		// WordPress appends "… Continue reading <title>" to auto-generated excerpts
+		.replace(/\s*(\u2026|\.\.\.)?\s*Continue reading.*$/, '\u2026')
+		.trim();
+
+const blogRes = await fetch(
+	'https://ctg.hypotheses.org/wp-json/wp/v2/posts?per_page=100&_embed=author',
+	{ headers: { 'User-Agent': 'ctg-archive/1.0' } }
+);
+// deno-lint-ignore no-explicit-any
+const blogRaw: any[] = await blogRes.json();
+const blog = blogRaw.map((p) => ({
+	id: p.id,
+	date: p.date,
+	link: p.link,
+	title: stripHtml(p.title.rendered),
+	excerpt: stripHtml(p.excerpt.rendered),
+	author: p._embedded?.author?.[0]?.name ?? ''
+}));
+await Deno.writeTextFile('./src/data/BLOG.json', JSON.stringify(blog));
+
+//
 // Record time of last archive
 //
 
