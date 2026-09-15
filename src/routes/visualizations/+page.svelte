@@ -743,18 +743,22 @@
 </script>
 
 <div class="flex justify-center overflow-auto px-4">
-	<div
-		bind:this={sustainabilityChartEl}
-		id="vis3"
-		class="mb-4 rounded-lg bg-gray-50 p-4"
-		style="min-width: 750px; max-width: 1220px;"
-	></div>
+	<div class="mb-4 rounded-lg bg-gray-50 p-4" style="min-width: 750px; max-width: 1220px;">
+		<div bind:this={sustainabilityChartEl} id="vis3"></div>
+		<p class="mt-2 text-sm text-gray-500">Visualization by Joudy Sido-Bozan</p>
+	</div>
 </div>
 
 <div class="flex justify-center px-4">
-	<div id="vis1" class="mb-4 rounded-lg bg-gray-50 p-4"></div>
+	<div class="mb-4 rounded-lg bg-gray-50 p-4">
+		<div id="vis1"></div>
+		<p class="mt-2 text-sm text-gray-500">Visualization by M. Xenia Kudela</p>
+	</div>
 </div>
 
 <div class="flex justify-center px-4">
-	<div id="vis2" class="mb-4 rounded-lg bg-gray-50 p-4"></div>
+	<div class="mb-4 rounded-lg bg-gray-50 p-4">
+		<div id="vis2"></div>
+		<p class="mt-2 text-sm text-gray-500">Visualization by M. Xenia Kudela</p>
+	</div>
 </div>
