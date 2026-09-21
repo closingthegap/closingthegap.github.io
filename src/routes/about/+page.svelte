@@ -113,7 +113,7 @@
 
 				<!-- Profile 4 -->
 				<div class="rounded-lg bg-white p-4 text-center shadow">
-					<!-- <a href="https://www.example.com" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition-shadow"> -->
+					<a href="https://joudysidobozan.github.io/Joudy-Sido-Bozan/" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition-shadow">
 					<img
 						src="/team/joudy.jpg"
 						alt="Joudy Sido-Bozan"
@@ -127,7 +127,7 @@
 						representations, ensuring accessibility, sustainability and structured analysis of
 						research in underrepresented languages.
 					</p>
-					<!-- </a> -->
+					</a>
 				</div>
 			</div>
 
