@@ -1,4 +1,47 @@
 <script>
+	// Photo gallery. Web-sized photos live in static/workshop_photos/.
+	const photoBase = '/workshop_photos/';
+	const photos = [
+		'IMG_3768.jpg',
+		'IMG_3769.jpg',
+		'IMG_3780.jpg',
+		'IMG_3785.jpg',
+		'IMG_3852.jpg',
+		'IMG_3854.jpg',
+		'IMG_3855.jpg',
+		'IMG_3856.jpg',
+		'IMG_3859.jpg',
+		'IMG_3862.jpg',
+		'IMG_3863.jpg',
+		'IMG_3865.jpg',
+		'IMG_3867.jpg',
+		'IMG_3870.jpg',
+		'IMG_3891.jpg',
+		'IMG_3893.jpg',
+		'IMG_3904.jpg',
+		'IMG_3908.jpg',
+		'IMG_3913.jpg',
+		'IMG_3921.jpg',
+		'IMG_3923.jpg',
+		'IMG_3927.jpg',
+		'IMG_3928.jpg',
+		'IMG_3929.jpg',
+		'IMG_5449.jpg',
+		'IMG_5453.jpg',
+		'IMG_5454.jpg',
+		'IMG_5463.jpg',
+		'IMG_5469.jpg',
+		'IMG_5470.jpg',
+		'IMG_5473.jpg',
+		'IMG_5474.jpg',
+		'IMG_5475.jpg',
+		'IMG_5477.jpg',
+		'IMG_5483.jpg',
+		'IMG_5490.jpg',
+		'IMG_5497.jpg',
+		'IMG_5499.jpg',
+		'IMG_5500%202.jpg'
+	];
 
 	const sessions = [
 		{
@@ -28,8 +71,7 @@
 					affiliation:
 						'Machine Learning for Complex Networks, Center for Artificial Intelligence and Data Science (CAIDAS), Julius-Maximilians-Universität Würzburg',
 					introducedBy: 'Prof. Dr. Hubert Mara',
-					introducedByLink:
-						'https://www.ada.fu-berlin.de/dh-fu/Personen/Mara/index.html',
+					introducedByLink: 'https://www.ada.fu-berlin.de/dh-fu/Personen/Mara/index.html',
 					link: 'https://www.caidas.uni-wuerzburg.de/ml4nets/team/prof-dr-ingo-scholtes/'
 				},
 				{ type: 'break', time: '16:00 – 16:15', label: 'Coffee break' },
@@ -102,7 +144,8 @@
 					coauthor: 'with Prof. Dr. Letizia Cerqueglini',
 					institution: 'Tel Aviv University',
 					link: 'https://telaviv.academia.edu/TBernstein',
-					title: 'From Digital Edition to Interactive Argument: Publishing Philological Interpretation',
+					title:
+						'From Digital Edition to Interactive Argument: Publishing Philological Interpretation',
 					abstract: [
 						'Digital editions often inherit the logic of the paper: they present a stabilized text, while the decisions behind it remain scattered across apparatus, commentary, and bibliography. Addressing Digital Scholarly Communication, we ask what happens when those decisions become part of the publication itself. We argue that digital philology can integrate data, method, and interpretation by preserving the links that connect them.',
 						'Scholarly digital editions are critical representations shaped by modeling, not neutral reproductions. In Northwest Semitic epigraphy, especially Phoenician and Punic, largely unrecorded vowels can leave a consonantal sequence open to several lexical or grammatical interpretations, while word division may also be uncertain. A transcription is therefore already an argument.',
@@ -117,7 +160,8 @@
 					speaker: 'Oualid El-Khattabi',
 					institution: 'Freie Universität Berlin',
 					link: 'https://www.geschkult.fu-berlin.de/e/semiarab/arabistik/team/dfg/el_khattabi/index.html',
-					title: 'When You Can See All of It at Once: Synoptic Record, Synoptic Navigation, Derived Maps',
+					title:
+						'When You Can See All of It at Once: Synoptic Record, Synoptic Navigation, Derived Maps',
 					abstract: [
 						'Every major advancement in media/information technology has expanded the scale of what can be held in view. However, the ratio between the quantity of available information and the resolution at which any one scholar can engage it widens with each turn, pushing the individual reader toward increasingly abstract levels of relation to the object of study. A navigational crisis ensues with each expansion of what is available at scale. To navigate, to build the map, becomes both means and end — an attitude toward scholarship.',
 						'This distinction emerged from my work on Variorum, an AI-assisted collation environment for automatic drafting, editing, and annotating synoptic alignments of variant-rich Arabic fluid textual traditions. Variorum uses LLMs to draft the time-consuming steps of segmentation and alignment, opening up capacity for review, judgment, iteration, and scale. Once the synoptic edition arrives at this speed and can be expanded at unprecedented scales, the object — what I term the synoptic record — itself begins to require navigation; for once you can see the whole tradition at once, you can no longer hold it in view.',
@@ -216,13 +260,45 @@
 
 <div class="flex justify-center px-4">
 	<div class="mb-4 w-full max-w-6xl rounded-lg bg-ctgtan p-4 sm:p-6">
-		<!-- Intro -->
+		<!-- Post-workshop note and photo gallery -->
 		<section class="mb-6">
 			<h1 class="mb-3.5 border-b border-ctgblue pb-2 text-2xl font-medium">
 				Beyond the Book: Digital Research, Presentation, and Sustainability
 			</h1>
 
-			<h2 class="mb-3 text-xl font-medium">September 21–22, 2026</h2>
+			<p class="mb-3 text-gray-800">
+				The workshop was a great success. Thank you to everyone who came, presented, and took part
+				in the discussions.
+			</p>
+
+			<h2 class="mb-3 text-xl font-medium">Check out the photos</h2>
+		</section>
+
+		<!-- Photo gallery: horizontal scroll strip -->
+		<div class="mb-6 flex snap-x snap-mandatory gap-2 overflow-x-auto rounded bg-white p-2 shadow">
+			{#each photos as photo, i}
+				<a
+					href={photoBase + photo}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="shrink-0 snap-start"
+				>
+					<img
+						src={photoBase + photo}
+						alt="Workshop photo {i + 1}"
+						loading={i < 4 ? 'eager' : 'lazy'}
+						decoding="async"
+						class="h-48 w-auto rounded sm:h-64"
+					/>
+				</a>
+			{/each}
+		</div>
+
+		<!-- Intro / programme -->
+		<section class="mb-6">
+			<h2 class="mb-3.5 border-b border-ctgblue pb-2 text-2xl font-medium">Programme</h2>
+
+			<h3 class="mb-3 text-xl font-medium">September 21–22, 2026</h3>
 
 			<p class="mb-3 text-gray-800">
 				This 1.5-day workshop explores how digital research—particularly in the context of non-Latin
@@ -274,8 +350,8 @@
 					<h2 class="mb-1 text-lg font-semibold text-ctgblue">Registration is now closed</h2>
 					<p class="text-gray-800">
 						We have reached full capacity for the workshop. Thank you to everyone who registered. We
-						look forward to welcoming our confirmed participants to Freie Universität Berlin. For any
-						enquiries, please <a
+						look forward to welcoming our confirmed participants to Freie Universität Berlin. For
+						any enquiries, please <a
 							href="mailto:j.sido.bozan@fu-berlin.de"
 							class="font-medium text-ctgblue underline hover:text-ctgorange">get in touch</a
 						>.
@@ -288,7 +364,9 @@
 		<section>
 			<h2 class="mb-1.5 border-b border-ctgblue pb-2 text-xl font-medium">Workshop Programme</h2>
 			<div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-				<p class="text-sm text-gray-700">Select a session below, then open a talk to read its abstract.</p>
+				<p class="text-sm text-gray-700">
+					Select a session below, then open a talk to read its abstract.
+				</p>
 				<a
 					href="/Beyond-the-Book-Programme.pdf"
 					download
@@ -299,7 +377,11 @@
 			</div>
 
 			<!-- Session tabs -->
-			<div class="mb-6 flex flex-col gap-2 sm:flex-row" role="tablist" aria-label="Workshop sessions">
+			<div
+				class="mb-6 flex flex-col gap-2 sm:flex-row"
+				role="tablist"
+				aria-label="Workshop sessions"
+			>
 				{#each sessions as s}
 					<button
 						role="tab"
@@ -339,7 +421,9 @@
 
 							{#if row.type === 'keynote'}
 								<div class="flex flex-col gap-1 sm:flex-row sm:gap-4">
-									<div class="shrink-0 pt-1 font-mono text-xs text-gray-500 sm:w-28">{row.time}</div>
+									<div class="shrink-0 pt-1 font-mono text-xs text-gray-500 sm:w-28">
+										{row.time}
+									</div>
 									<div class="flex-1 rounded-md border border-ctgorange/50 bg-ctgorange/10 p-4">
 										<span
 											class="inline-block rounded bg-ctgorange px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-white"
@@ -350,12 +434,12 @@
 										<p class="mt-1 text-sm text-gray-700">{row.affiliation}</p>
 										<p class="mt-1 text-xs italic text-gray-600">
 											{#if row.introducedBy}Introduced by {#if row.introducedByLink}<a
-													href={row.introducedByLink}
-													target="_blank"
-													rel="noopener noreferrer"
-													class="font-medium text-ctgblue underline hover:text-ctgorange"
-													>{row.introducedBy}</a
-												>{:else}{row.introducedBy}{/if} · followed by questions & discussion{:else}Followed
+														href={row.introducedByLink}
+														target="_blank"
+														rel="noopener noreferrer"
+														class="font-medium text-ctgblue underline hover:text-ctgorange"
+														>{row.introducedBy}</a
+													>{:else}{row.introducedBy}{/if} · followed by questions & discussion{:else}Followed
 												by questions & discussion{/if}
 										</p>
 										<a
@@ -370,7 +454,9 @@
 								</div>
 							{:else if row.type === 'talk'}
 								<div class="flex flex-col gap-1 sm:flex-row sm:gap-4">
-									<div class="shrink-0 pt-3 font-mono text-xs text-gray-500 sm:w-28">{row.time}</div>
+									<div class="shrink-0 pt-3 font-mono text-xs text-gray-500 sm:w-28">
+										{row.time}
+									</div>
 									<div class="flex-1 overflow-hidden rounded-md border border-ctgblue/20">
 										<button
 											class="flex w-full items-start justify-between gap-3 bg-white px-4 py-3 text-left hover:bg-ctgtan/10"
@@ -426,7 +512,9 @@
 								</div>
 							{:else if row.type === 'panel'}
 								<div class="flex flex-col gap-1 sm:flex-row sm:gap-4">
-									<div class="shrink-0 pt-3 font-mono text-xs text-gray-500 sm:w-28">{row.time}</div>
+									<div class="shrink-0 pt-3 font-mono text-xs text-gray-500 sm:w-28">
+										{row.time}
+									</div>
 									<div class="flex-1 rounded-md bg-ctgblue/5 px-4 py-3">
 										<span
 											class="inline-block rounded bg-ctgblue px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-white"
