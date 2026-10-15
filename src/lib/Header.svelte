@@ -59,6 +59,8 @@
 			class="underline-offset-2 hover:underline"
 			class:underline={$page.route.id === '/workshop'}>Workshop</a
 		>
+		<!-- Contribute and Consulting pages disabled (Oct 2026). Routes still exist under src/routes/. -->
+		<!--
 		<a
 			href="{base}/contribute/"
 			class="underline-offset-2 hover:underline"
@@ -69,6 +71,7 @@
 			class="underline-offset-2 hover:underline"
 			class:underline={$page.route.id === '/consulting'}>Consulting</a
 		>
+		-->
 		<a
 			href="{base}/about/"
 			class="underline-offset-2 hover:underline"

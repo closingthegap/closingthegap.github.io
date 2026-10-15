@@ -341,7 +341,7 @@
 		</section>
 
 		<!-- Registration closed notice -->
-		<section class="mb-8">
+		<!-- <section class="mb-8">
 			<div
 				class="flex items-start gap-3 rounded-md border-l-4 border-ctgblue bg-white/80 p-4 shadow-sm"
 			>
@@ -358,7 +358,7 @@
 					</p>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<!-- Interactive Programme -->
 		<section>
