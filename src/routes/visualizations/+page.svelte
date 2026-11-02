@@ -4,14 +4,14 @@
 	import { default as vegaEmbed } from 'vega-embed';
 	import type { VisualizationSpec } from 'vega-embed';
 
-	import { createData } from './data_management';
+	import { createData } from './data_management.ts';
 
 	const { projects, siblingDependencies, parentChildDependencies, cooperationDependencies } =
 		createData();
 	let sustainabilityChartEl: HTMLDivElement;
 
 	const spec1: VisualizationSpec = {
-		$schema: 'https://vega.github.io/schema/vega/v5.json',
+		$schema: 'https://vega.github.io/schema/vega/v6.json',
 		description:
 			'A network diagram of software dependencies, with edges grouped via hierarchical edge bundling',
 		autosize: 'pad',
@@ -408,7 +408,7 @@
 	};
 
 	const spec2: VisualizationSpec = {
-		$schema: 'https://vega.github.io/schema/vega/v5.json',
+		$schema: 'https://vega.github.io/schema/vega/v6.json',
 		description: 'An example of a space-fulling radial layout for hierarchical data.',
 		autosize: 'pad',
 		width: 750,
@@ -609,7 +609,8 @@
 		);
 		const projects = rawProjects.filter((p) => p !== null);
 		const total = projects.length;
-		const countBy = (key: string, val: number) => projects.filter((p) => p[key] === val).length;
+		const countBy = (key: keyof (typeof projects)[number], val: number) =>
+			projects.filter((p) => p[key] === val).length;
 		const bar = (cat: string, label: string, count: number) => ({
 			Category: cat,
 			'Score Label': label,
@@ -651,7 +652,7 @@
 		];
 
 		const sustainabilitySpec: VisualizationSpec = {
-			$schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+			$schema: 'https://vega.github.io/schema/vega-lite/v6.json',
 			title: {
 				text: 'Sustainability Overview',
 				orient: 'top',
@@ -669,24 +670,13 @@
 				subtitleColor: 'black',
 				subtitlePadding: 30
 			},
-			axis: {
-				labelFont: 'Inter',
-				titleFont: 'Inter',
-				labelFontSize: 16,
-				titleFontSize: 14,
-				labelColor: '#2F4A60',
-				titleColor: '#2F4A60'
-			},
-			legend: {
-				labelFont: 'bold',
-				titleFont: 'bold',
-				labelFontSize: 16,
-				titleFontSize: 14
-			},
 			data: { values },
-			selection: {
-				highlight: { type: 'single', on: 'mouseover', empty: 'all', clear: 'mouseout' }
-			},
+			params: [
+				{
+					name: 'highlight',
+					select: { type: 'point', on: 'mouseover', clear: 'mouseout', toggle: false }
+				}
+			],
 			mark: 'bar',
 			encoding: {
 				x: {
@@ -722,7 +712,7 @@
 					}
 				},
 				opacity: {
-					condition: { selection: 'highlight', value: 1 },
+					condition: { param: 'highlight', value: 1 },
 					value: 0.5
 				},
 				tooltip: [{ field: 'Tooltip', type: 'nominal', title: 'Details' }]
@@ -731,11 +721,7 @@
 			width: 1050,
 			height: 450,
 			padding: 44,
-			config: {
-				bar: {
-					innerPadding: 5
-				}
-			}
+			config: {}
 		};
 
 		vegaEmbed(sustainabilityChartEl, sustainabilitySpec);

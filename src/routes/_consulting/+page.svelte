@@ -146,8 +146,7 @@
 					id="projectDescription"
 					bind:value={projectDescription}
 					rows="4"
-					class="mt-1 w-full rounded border-ctgblue p-2"
-				></textarea>
+					class="mt-1 w-full rounded border-ctgblue p-2"></textarea>
 			</div>
 
 			<!-- Discipline & Geo-Temporal Focus -->
@@ -220,8 +219,7 @@
 					bind:value={consultationGoals}
 					required
 					rows="3"
-					class="mt-1 w-full rounded border-ctgblue p-2"
-				></textarea>
+					class="mt-1 w-full rounded border-ctgblue p-2"></textarea>
 			</div>
 
 			<!-- DH Experience -->
@@ -304,8 +302,7 @@
 					id="comments"
 					bind:value={comments}
 					rows="2"
-					class="mt-1 w-full rounded border-ctgblue p-2"
-				></textarea>
+					class="mt-1 w-full rounded border-ctgblue p-2"></textarea>
 			</div>
 
 			<!-- Submit -->

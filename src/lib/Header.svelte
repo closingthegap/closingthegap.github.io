@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { base } from '$app/paths';
-	import { page } from '$app/stores';
+	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 
-	import LogotypeURL from '$lib/svg/Logotype.svg?url';
+	import LogotypeURL from '#lib/svg/Logotype.svg?url';
+	const currentRoute = $derived(page.route.id);
 </script>
 
 <div class="mx-auto mb-4 max-w-[76rem] px-4 text-gray-50">
@@ -20,62 +21,49 @@
 <div class="mb-4 bg-ctgorange py-3">
 	<div class="mx-auto flex max-w-[76rem] flex-wrap gap-x-4 gap-y-2 px-4 text-xl font-normal">
 		<a
-			href="{base}/"
+			href={resolve('/')}
 			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/'}>Projects</a
+			class:underline={currentRoute === '/'}>Projects</a
 		>
 		<a
-			href="{base}/map/"
+			href={resolve('/map')}
 			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/map'}>Map</a
+			class:underline={currentRoute === '/map'}>Map</a
 		>
 		<a
-			href="{base}/timeline/"
+			href={resolve('/timeline')}
 			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/timeline'}>Timeline</a
+			class:underline={currentRoute === '/timeline'}>Timeline</a
 		>
 		<a
-			href="{base}/visualizations/"
+			href={resolve('/visualizations')}
 			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/visualizations'}>Visualizations</a
+			class:underline={currentRoute === '/visualizations'}>Visualizations</a
 		>
 		<a
-			href="{base}/research/"
+			href={resolve('/research')}
 			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/research'}>Research</a
+			class:underline={currentRoute === '/research'}>Research</a
 		>
 		<a
-			href="{base}/blog/"
+			href={resolve('/blog')}
 			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/blog'}>Blog</a
+			class:underline={currentRoute === '/blog'}>Blog</a
 		>
 		<a
-			href="{base}/events/"
+			href={resolve('/events')}
 			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/events'}>Events</a
+			class:underline={currentRoute === '/events'}>Events</a
 		>
 		<a
-			href="{base}/workshop/"
+			href={resolve('/workshop')}
 			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/workshop'}>Workshop</a
-		>
-		<!-- Contribute and Consulting pages disabled (Oct 2026). Routes still exist under src/routes/. -->
-		<!--
-		<a
-			href="{base}/contribute/"
-			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/contribute'}>Contribute</a
+			class:underline={currentRoute === '/workshop'}>Workshop</a
 		>
 		<a
-			href="{base}/consulting/"
+			href={resolve('/about')}
 			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/consulting'}>Consulting</a
-		>
-		-->
-		<a
-			href="{base}/about/"
-			class="underline-offset-2 hover:underline"
-			class:underline={$page.route.id === '/about'}>About</a
+			class:underline={currentRoute === '/about'}>About</a
 		>
 	</div>
 </div>

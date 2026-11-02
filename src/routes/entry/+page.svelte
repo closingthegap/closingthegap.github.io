@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { JsonStuff } from '$lib/utils.svelte';
-	import type { PlaceData, DateRange, Institution, RelatedEntity, Contact } from './types.svelte';
+	import { resolve } from '$app/paths';
+	import type { JsonStuff } from '#lib/utils.ts';
+	import type { PlaceData, DateRange, Institution, RelatedEntity, Contact } from './types.ts';
 
 	import projectsRaw from '../../data/PROJECTS.json';
 	import entriesRaw from '../../data/ENTRIES.json';
@@ -44,9 +45,7 @@
 
 		const entries = entriesRaw as [string, JsonStuff][];
 
-		const selectedEntry = entries.find(
-			([, data]) => data.record_metadata.uuid === id
-		);
+		const selectedEntry = entries.find(([, data]) => data.record_metadata.uuid === id);
 
 		if (!selectedEntry) {
 			window.location.href = '..';
@@ -172,9 +171,8 @@
 				{:else}
 					{#each relatedEnts as ent}
 						<li>
-							<a href={`../entry/#${ent.uuid}`} class="hover:underline">{ent.title}</a> (<em
-								>{ent.relation_type}</em
-							>)
+							<a href={`${resolve('/entry')}/#${ent.uuid}`} class="hover:underline">{ent.title}</a>
+							(<em>{ent.relation_type}</em>)
 						</li>
 					{/each}
 				{/if}

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { base } from '$app/paths';
-	import type { JsonStuff } from '$lib/utils.svelte';
+	import { resolve } from '$app/paths';
+	import type { JsonStuff } from '#lib/utils.ts';
 	import entriesRaw from '../../data/ENTRIES.json';
 
 	const entries = entriesRaw as [string, JsonStuff][];
 
-	$: entriesFiltered = entries.filter(
+	const entriesFiltered = entries.filter(
 		([, entry]) => entry.project.date[0].from && entry.project.date[0].to
 	);
 
@@ -46,8 +46,11 @@
 	}
 
 	function entryUrl(url: string): string {
-		const uuid = url.split('/').pop()!.replace(/\.json$/, '');
-		return `${base}/entry/#${uuid}`;
+		const uuid = url
+			.split('/')
+			.pop()!
+			.replace(/\.json$/, '');
+		return `${resolve('/entry')}/#${uuid}`;
 	}
 </script>
 
@@ -81,27 +84,25 @@
 
 						{#each years as year, j}
 							{#if fundedYear(Number(year), entry)}
-								<td class="bg-slate-800" />
+								<td class="bg-slate-800"></td>
 							{:else if j === years.length - 1}
-								<td />
+								<td></td>
 							{:else}
-								<td class="border-r border-slate-800/25" />
+								<td class="border-r border-slate-800/25"></td>
 							{/if}
 						{/each}
 					{:else}
 						<td class="border-b border-r border-slate-800 px-2 py-0.5"
-							><a href={entryUrl(url)}
-								>{truncateTitle(entry.project.title)}</a
-							></td
+							><a href={entryUrl(url)}>{truncateTitle(entry.project.title)}</a></td
 						>
 
 						{#each years as year, j}
 							{#if fundedYear(Number(year), entry)}
-								<td class="bg-slate-800" />
+								<td class="bg-slate-800"></td>
 							{:else if j === years.length - 1}
-								<td class="border-b border-slate-800/25" />
+								<td class="border-b border-slate-800/25"></td>
 							{:else}
-								<td class="border-b border-r border-slate-800/25" />
+								<td class="border-b border-r border-slate-800/25"></td>
 							{/if}
 						{/each}
 					{/if}

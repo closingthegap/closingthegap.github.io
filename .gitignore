@@ -7,3 +7,6 @@ deno.lock
 
 # Local Claude Code tooling
 .claude/
+
+/test-results/
+/playwright-report/

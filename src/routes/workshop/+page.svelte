@@ -466,7 +466,7 @@
 											<span>
 												<span class="block font-medium text-ctgblue">
 													{row.speaker}
-													{#if row.tbc}
+													{#if 'tbc' in row && row.tbc}
 														<span class="text-xs font-normal italic text-gray-500">(t.b.c.)</span>
 													{/if}
 													{#if row.coauthor}
@@ -491,7 +491,7 @@
 												<p class="mb-2 text-xs font-semibold uppercase tracking-wide text-ctgtan">
 													Abstract
 												</p>
-												{#each row.abstract as para}
+												{#each row.abstract ?? [] as para}
 													<p class="mb-2 text-sm leading-relaxed text-gray-800">{para}</p>
 												{/each}
 											</div>

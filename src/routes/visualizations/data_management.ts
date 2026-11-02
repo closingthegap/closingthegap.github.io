@@ -1,5 +1,5 @@
 import entriesRaw from '../../data/ENTRIES.json';
-import type { JsonStuff } from '$lib/utils.svelte';
+import type { JsonStuff } from '#lib/utils.ts';
 
 interface Dependency {
 	source: string;

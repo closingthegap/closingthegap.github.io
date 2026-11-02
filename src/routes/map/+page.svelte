@@ -1,16 +1,16 @@
 <script lang="ts">
 	// Svelte
 	import { onMount, onDestroy } from 'svelte';
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 
 	// Leaflet
 	import type { Map } from 'leaflet';
 	import 'leaflet/dist/leaflet.css';
 
 	// First-party
-	import { filterPlaces } from '$lib/utils.svelte';
+	import { filterPlaces } from '#lib/utils.ts';
 	import entriesRaw from '../../data/ENTRIES.json';
-	import type { JsonStuff } from '$lib/utils.svelte';
+	import type { JsonStuff } from '#lib/utils.ts';
 
 	interface ProjectLink {
 		title: string;
@@ -51,8 +51,11 @@
 
 		for (const [url, data] of entries) {
 			const places = filterPlaces(data.project.places);
-			const uuid = url.split('/').pop()!.replace(/\.json$/, '');
-			const entryUrl = `${base}/entry/#${uuid}`;
+			const uuid = url
+				.split('/')
+				.pop()!
+				.replace(/\.json$/, '');
+			const entryUrl = `${resolve('/entry')}/#${uuid}`;
 
 			for (const place of places) {
 				const key = place.coordinates.lat.split('.')[0] + place.coordinates.lng.split('.')[0];
@@ -132,5 +135,5 @@
 </svelte:head>
 
 <div class="mx-auto max-w-6xl px-4">
-	<div bind:this={mapElement} class="h-[34rem] rounded-md font-normal" />
+	<div bind:this={mapElement} class="h-[34rem] rounded-md font-normal"></div>
 </div>

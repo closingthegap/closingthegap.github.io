@@ -43,7 +43,7 @@
 				'service_s513c3i', // Your EmailJS service ID
 				'template_nqj4aum', // Your EmailJS template ID
 				templateParams,
-				'5SbE9iKVe1cS7XMy2' // Your EmailJS public key
+				{ publicKey: '5SbE9iKVe1cS7XMy2' }
 			);
 			success = true;
 			// Reset fields
@@ -134,8 +134,7 @@
 					id="comments"
 					bind:value={comments}
 					rows="4"
-					class="mt-1 w-full rounded border-ctgblue p-2"
-				></textarea>
+					class="mt-1 w-full rounded border-ctgblue p-2"></textarea>
 			</div>
 
 			<button

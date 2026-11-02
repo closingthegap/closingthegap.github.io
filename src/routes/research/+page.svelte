@@ -1,16 +1,35 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 
-	let upcomingEvents = [];
-	let pastEvents = [];
-	let publications = [];
+	interface EventItem {
+		name: string;
+		location: string;
+		date: string;
+		link: string;
+		rawDate: Date;
+		time?: string;
+		title?: string;
+		author?: string;
+		eventType?: string;
+	}
+	interface Publication {
+		title: string;
+		author: string;
+		year: string;
+		link: string;
+		rawDate: Date;
+	}
+
+	let upcomingEvents: EventItem[] = [];
+	let pastEvents: EventItem[] = [];
+	let publications: Publication[] = [];
 
 	const SHEET_ID = '1TwBvYnygSy1t4CSJHtiYBewntAPiVR5fAvjdeJwelvE';
 	const API_KEY = 'AIzaSyD_uAmMav0SiCFz4FRrixvRyGNgsBBhG2c';
 	const RANGE = 'Sheet1';
 	const API_URL = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
 
-	function parseStartDate(dateStr) {
+	function parseStartDate(dateStr: string) {
 		if (!dateStr) return null;
 		const first = dateStr.split(/[-–—]/)[0]?.trim();
 		const [d, m, y] = first?.split('.') || [];
@@ -18,7 +37,7 @@
 		return isNaN(dt.getTime()) ? null : dt;
 	}
 
-	function parsePublicationDate(yearStr) {
+	function parsePublicationDate(yearStr: string) {
 		if (!yearStr) return null;
 		const [month, year] = yearStr.trim().split(/\s+/);
 		const dt = new Date(`${month} 1, ${year}`);
@@ -29,7 +48,7 @@
 		try {
 			const res = await fetch(API_URL);
 			const json = await res.json();
-			const rows = json.values;
+			const rows: string[][] | undefined = json.values;
 
 			if (!rows || rows.length < 2) return;
 
@@ -59,13 +78,13 @@
 						}
 					);
 				})
-				.filter(Boolean)
-				.sort((a, b) => a.rawDate - b.rawDate);
+				.filter((item) => item !== null)
+				.sort((a, b) => a.rawDate.getTime() - b.rawDate.getTime());
 
 			upcomingEvents = allEvents.filter((e) => e.rawDate >= today);
 			pastEvents = allEvents
 				.filter((e) => e.rawDate < today)
-				.sort((a, b) => b.rawDate - a.rawDate);
+				.sort((a, b) => b.rawDate.getTime() - a.rawDate.getTime());
 
 			publications = data
 				.filter((row) => row.Type?.toLowerCase() === 'publication')
@@ -81,8 +100,8 @@
 						}
 					);
 				})
-				.filter(Boolean)
-				.sort((a, b) => b.rawDate - a.rawDate);
+				.filter((item) => item !== null)
+				.sort((a, b) => b.rawDate.getTime() - a.rawDate.getTime());
 		} catch (err) {
 			console.error('Error loading research data:', err);
 		}
@@ -182,7 +201,12 @@
 			<ul class="mb-6 list-disc space-y-2 pl-5">
 				{#each publications as p}
 					<li>
-						<a href={p.link} target="_blank" rel="noopener noreferrer" class="text-ctgblue hover:underline">
+						<a
+							href={p.link}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-ctgblue hover:underline"
+						>
 							{p.title}
 						</a>
 						<span class="text-sm text-gray-600"> — {p.author} ({p.year})</span>

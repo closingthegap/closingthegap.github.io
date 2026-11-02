@@ -1,15 +1,27 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 
-	let upcoming = [];
-	let past = [];
+	interface EventItem {
+		name: string;
+		location: string;
+		date: string;
+		link: string;
+		rawDate: Date;
+		time?: string;
+		title?: string;
+		author?: string;
+		eventType?: string;
+	}
+
+	let upcoming: EventItem[] = [];
+	let past: EventItem[] = [];
 
 	const SHEET_ID = '1TwBvYnygSy1t4CSJHtiYBewntAPiVR5fAvjdeJwelvE';
 	const API_KEY = 'AIzaSyD_uAmMav0SiCFz4FRrixvRyGNgsBBhG2c';
 	const RANGE = 'Sheet2';
 	const API_URL = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
 
-	function parseDate(dateStr) {
+	function parseDate(dateStr: string) {
 		const first = dateStr?.split(/[-–—]/)[0]?.trim();
 		const [d, m, y] = first?.split('.') || [];
 		const dt = new Date(`${y}-${m}-${d}`);
@@ -20,7 +32,7 @@
 		try {
 			const res = await fetch(API_URL);
 			const json = await res.json();
-			const rows = json.values;
+			const rows: string[][] | undefined = json.values;
 
 			if (!rows || rows.length < 2) return;
 
@@ -44,13 +56,13 @@
 						}
 					);
 				})
-				.filter(Boolean)
-				.sort((a, b) => a.rawDate - b.rawDate);
+				.filter((item) => item !== null)
+				.sort((a, b) => a.rawDate.getTime() - b.rawDate.getTime());
 
 			upcoming = events.filter((e) => e.rawDate >= today);
 			past = events
-			.filter((e) => e.rawDate < today)
-			.sort((a, b) => b.rawDate - a.rawDate); // latest → earliest
+				.filter((e) => e.rawDate < today)
+				.sort((a, b) => b.rawDate.getTime() - a.rawDate.getTime()); // latest → earliest
 		} catch (err) {
 			console.error('Error loading events:', err);
 		}

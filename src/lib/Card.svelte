@@ -1,12 +1,13 @@
 <script lang="ts">
-	import type { JsonStuff } from '$lib/utils.svelte';
+	import { resolve } from '$app/paths';
+	import type { JsonStuff } from '#lib/utils.ts';
 
-	import Arrow from '$lib/svg/Arrow.svelte';
-	import Brackets from '$lib/svg/Brackets.svelte';
-	import Calendar from '$lib/svg/Calendar.svelte';
-	import Lang from '$lib/svg/Lang.svelte';
-	import Link from '$lib/svg/Link.svelte';
-	import Pin from '$lib/svg/Pin.svelte';
+	import Arrow from '#lib/svg/Arrow.svelte';
+	import Brackets from '#lib/svg/Brackets.svelte';
+	import Calendar from '#lib/svg/Calendar.svelte';
+	import Lang from '#lib/svg/Lang.svelte';
+	import Link from '#lib/svg/Link.svelte';
+	import Pin from '#lib/svg/Pin.svelte';
 
 	export let title: string;
 	export let description: string;
@@ -21,8 +22,7 @@
 
 	$: realPeriods = periods.filter((period) => period.from);
 
-	const prefix =
-		'https://github.com/closingthegap/closingthegap.github.io/tree/master/PROJECTS/';
+	const prefix = 'https://github.com/closingthegap/closingthegap.github.io/tree/master/PROJECTS/';
 	$: suffix = url.split('/PROJECTS/')[1];
 	$: jsonLink = prefix + suffix;
 </script>
@@ -48,7 +48,7 @@
 			</div>
 		{/if}
 
-		<h3 class="mb-3 text-xl font-medium"><a href="entry/#{uuid}">{title}</a></h3>
+		<h3 class="mb-3 text-xl font-medium"><a href={`${resolve('/entry')}/#${uuid}`}>{title}</a></h3>
 
 		<div class="mb-3">
 			<div class="mb-2">

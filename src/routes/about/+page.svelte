@@ -113,20 +113,25 @@
 
 				<!-- Profile 4 -->
 				<div class="rounded-lg bg-white p-4 text-center shadow">
-					<a href="https://joudysidobozan.github.io/Joudy-Sido-Bozan/" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition-shadow">
-					<img
-						src="/team/joudy.jpg"
-						alt="Joudy Sido-Bozan"
-						class="mx-auto mb-4 h-32 w-32 rounded-full object-cover"
-					/>
-					<h4 class="text-xl font-semibold">Joudy Sido-Bozan</h4>
-					<p class="mt-2 text-sm">
-						Joudy Sido Bozan works at the intersection of digital humanities and programming,
-						developing tools to collect, organize, and visualize research projects in non-Latin
-						scripts. Her work focuses on automating data extraction and creating visual
-						representations, ensuring accessibility, sustainability and structured analysis of
-						research in underrepresented languages.
-					</p>
+					<a
+						href="https://joudysidobozan.github.io/Joudy-Sido-Bozan/"
+						target="_blank"
+						rel="noreferrer"
+						class="block rounded-lg bg-white p-4 text-center shadow transition-shadow hover:shadow-lg"
+					>
+						<img
+							src="/team/joudy.jpg"
+							alt="Joudy Sido-Bozan"
+							class="mx-auto mb-4 h-32 w-32 rounded-full object-cover"
+						/>
+						<h4 class="text-xl font-semibold">Joudy Sido-Bozan</h4>
+						<p class="mt-2 text-sm">
+							Joudy Sido Bozan works at the intersection of digital humanities and programming,
+							developing tools to collect, organize, and visualize research projects in non-Latin
+							scripts. Her work focuses on automating data extraction and creating visual
+							representations, ensuring accessibility, sustainability and structured analysis of
+							research in underrepresented languages.
+						</p>
 					</a>
 				</div>
 
@@ -140,23 +145,37 @@
 					/>
 					<h4 class="text-xl font-semibold">Dr. Jonas Müller-Laackman</h4>
 					<p class="mt-2 text-sm">
-						Jonas started the project and initiated its foundational directions and principles. He has a background in Arabic Studies and worked in several DH projects, but ultimately decided that research infrastructure is the way to go, so he set out to lead the digital scholarship department at SUB Hamburg.
+						Jonas started the project and initiated its foundational directions and principles. He
+						has a background in Arabic Studies and worked in several DH projects, but ultimately
+						decided that research infrastructure is the way to go, so he set out to lead the digital
+						scholarship department at SUB Hamburg.
 					</p>
 					<!-- </a> -->
 				</div>
 
 				<!-- Profile 6 -->
 				<div class="rounded-lg bg-white p-4 text-center shadow">
-					<a href="https://www.theobeers.com/" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition-shadow">
-					<img
-						src="/team/theo.jpg"
-						alt="Theodore S. Beers"
-						class="mx-auto mb-4 h-32 w-32 rounded-full object-cover"
-					/>
-					<h4 class="text-xl font-semibold">Dr. Theodore S. Beers</h4>
-					<p class="mt-2 text-sm">
-						Theo ran the CtG project on a day-to-day basis for two years (2022–24). His tenure included, inter alia, a significant expansion of the project DB, a redesign/reimplementation of the web app, and improvements related to the open-sourcing and sustainable archiving of data. Theo was also responsible for writing the grant application that secured CtG its second period of funding. He left Berlin for Philadelphia in 2024 and now leads the course content team at the edtech company Boot.dev.
-					</p>
+					<a
+						href="https://www.theobeers.com/"
+						target="_blank"
+						rel="noreferrer"
+						class="block rounded-lg bg-white p-4 text-center shadow transition-shadow hover:shadow-lg"
+					>
+						<img
+							src="/team/theo.jpg"
+							alt="Theodore S. Beers"
+							class="mx-auto mb-4 h-32 w-32 rounded-full object-cover"
+						/>
+						<h4 class="text-xl font-semibold">Dr. Theodore S. Beers</h4>
+						<p class="mt-2 text-sm">
+							Theo ran the CtG project on a day-to-day basis for two years (2022–24). His tenure
+							included, inter alia, a significant expansion of the project DB, a
+							redesign/reimplementation of the web app, and improvements related to the
+							open-sourcing and sustainable archiving of data. Theo was also responsible for writing
+							the grant application that secured CtG its second period of funding. He left Berlin
+							for Philadelphia in 2024 and now leads the course content team at the edtech company
+							Boot.dev.
+						</p>
 					</a>
 				</div>
 			</div>

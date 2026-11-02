@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
 
-	import { searchTerm, selectedEntries, selectedTab, selectedTerms } from '$lib/stores.svelte';
+	import { searchTerm, selectedEntries, selectedTab, selectedTerms } from '#lib/stores.ts';
 	import entriesRaw from '../data/ENTRIES.json';
 
 	import {
@@ -11,39 +11,19 @@
 		getLanguages,
 		handleHash,
 		updateHash
-	} from '$lib/utils.svelte';
+	} from '#lib/utils.ts';
 
-	import type { JsonStuff } from '$lib/utils.svelte';
+	import type { JsonStuff } from '#lib/utils.ts';
 
-	import Card from '$lib/Card.svelte';
-	import Panel from '$lib/Panel.svelte';
+	import Card from '#lib/Card.svelte';
+	import Panel from '#lib/Panel.svelte';
 
 	const entries = entriesRaw as [string, JsonStuff][];
 	const keywordsMap = getKeywords(entries);
 	const keywordCats: Record<string, string[]> = fetchCategories(keywordsMap);
 	const languagesMap: Record<string, string[]> = getLanguages(entries);
 
-	let searchTermValue: string;
-	searchTerm.subscribe((value) => {
-		searchTermValue = value;
-	});
-
-	let selectedEntriesValue: [string, JsonStuff][];
-	selectedEntries.subscribe((value) => {
-		selectedEntriesValue = value;
-	});
-
-	let selectedTabValue: string;
-	selectedTab.subscribe((value) => {
-		selectedTabValue = value;
-	});
-
-	let selectedTermsValue: Set<string>;
-	selectedTerms.subscribe((value) => {
-		selectedTermsValue = value;
-	});
-
-	$: languages = Object.keys(languagesMap).sort();
+	const languages = Object.keys(languagesMap).sort();
 
 	function filterEntries(
 		entries: [string, JsonStuff][],
@@ -53,7 +33,7 @@
 	) {
 		if (selectedTab === 'search') {
 			if (searchTerm) {
-				return selectedEntriesValue;
+				return $selectedEntries;
 			}
 
 			return entries;
@@ -95,14 +75,13 @@
 			.trim();
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	function customSort(entries: [string, any][]) {
-		return entries.sort(([, aData], [, bData]) =>
+	function customSort(entries: [string, JsonStuff][]) {
+		return [...entries].sort(([, aData], [, bData]) =>
 			removeArticles(aData.project.title).localeCompare(removeArticles(bData.project.title))
 		);
 	}
 
-	$: filtered = filterEntries(entries, searchTermValue, selectedTabValue, selectedTermsValue);
+	$: filtered = filterEntries(entries, $searchTerm, $selectedTab, $selectedTerms);
 	$: sortedFiltered = customSort(filtered);
 
 	afterNavigate(handleHash);
@@ -124,7 +103,7 @@
 	</p>
 
 	<div class="flex flex-wrap justify-center gap-4 lg:justify-start">
-		{#each sortedFiltered as [url, data]}
+		{#each sortedFiltered as [url, data] (data.record_metadata.uuid)}
 			<Card
 				title={data.project.title}
 				description={data.project.project_desc}
