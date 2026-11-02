@@ -1,3 +1,5 @@
+import { writeFile } from 'node:fs/promises';
+
 //
 // Project title sort function
 //
@@ -27,7 +29,7 @@ const templateRes = await fetch(
 	'https://raw.githubusercontent.com/closingthegap/closingthegap.github.io/master/TEMPLATES/project.json'
 );
 const template = await templateRes.json();
-await Deno.writeTextFile('./src/data/TEMPLATES/project.json', JSON.stringify(template));
+await writeFile('./src/data/TEMPLATES/project.json', JSON.stringify(template));
 
 //
 // Fetch and save keywords
@@ -37,7 +39,7 @@ const keywordsRes = await fetch(
 	'https://raw.githubusercontent.com/closingthegap/closingthegap.github.io/master/KEYWORDS/KEYWORDS.json'
 );
 const keywords: Record<string, string[]> = await keywordsRes.json();
-await Deno.writeTextFile('./src/data/KEYWORDS.json', JSON.stringify(keywords));
+await writeFile('./src/data/KEYWORDS.json', JSON.stringify(keywords));
 
 //
 // Fetch and save list of projects
@@ -47,7 +49,7 @@ const projectsRes = await fetch(
 	'https://raw.githubusercontent.com/closingthegap/closingthegap.github.io/master/PROJECTS.json'
 );
 const projects: Record<string, Record<string, string>> = await projectsRes.json();
-await Deno.writeTextFile('./src/data/PROJECTS.json', JSON.stringify(projects));
+await writeFile('./src/data/PROJECTS.json', JSON.stringify(projects));
 
 //
 // Fetch project entries and build collection
@@ -72,7 +74,7 @@ let entries: [string, Record<string, unknown>][] = await Promise.all(
 
 entries = entries.sort((a, b) => sortTitles(a[1], b[1]));
 
-await Deno.writeTextFile('./src/data/ENTRIES.json', JSON.stringify(entries));
+await writeFile('./src/data/ENTRIES.json', JSON.stringify(entries));
 
 //
 // Fetch and save blog posts from ctg.hypotheses.org (WordPress REST API)
@@ -99,8 +101,16 @@ const blogRes = await fetch(
 	'https://ctg.hypotheses.org/wp-json/wp/v2/posts?per_page=100&_embed=author',
 	{ headers: { 'User-Agent': 'ctg-archive/1.0' } }
 );
-// deno-lint-ignore no-explicit-any
-const blogRaw: any[] = await blogRes.json();
+interface BlogPost {
+	id: number;
+	date: string;
+	link: string;
+	title: { rendered: string };
+	excerpt: { rendered: string };
+	_embedded?: { author?: { name: string }[] };
+}
+
+const blogRaw: BlogPost[] = await blogRes.json();
 const blog = blogRaw.map((p) => ({
 	id: p.id,
 	date: p.date,
@@ -109,10 +119,10 @@ const blog = blogRaw.map((p) => ({
 	excerpt: stripHtml(p.excerpt.rendered),
 	author: p._embedded?.author?.[0]?.name ?? ''
 }));
-await Deno.writeTextFile('./src/data/BLOG.json', JSON.stringify(blog));
+await writeFile('./src/data/BLOG.json', JSON.stringify(blog));
 
 //
 // Record time of last archive
 //
 
-await Deno.writeTextFile('./src/data/generated.txt', new Date().toUTCString());
+await writeFile('./src/data/generated.txt', new Date().toUTCString());
