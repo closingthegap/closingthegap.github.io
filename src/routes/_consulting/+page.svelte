@@ -1,6 +1,4 @@
 <script>
-	import emailjs from '@emailjs/browser';
-
 	let name = $state('');
 	let email = $state('');
 	let institution = $state('');
@@ -58,6 +56,7 @@
 		};
 
 		try {
+			const { default: emailjs } = await import('@emailjs/browser');
 			await emailjs.send(
 				'service_s513c3i',
 				'template_nqj4aum',
