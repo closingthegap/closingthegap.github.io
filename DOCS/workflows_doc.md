@@ -97,7 +97,7 @@ analysis.
 ## Bumping the Schema
 
 To ensure the **consistency and integrity** of our data, we implement **schema
-validation** using **Deno**. Whenever the schema is modified or updated, follow
+validation** using **Node.js**. Whenever the schema is modified or updated, follow
 these steps:
 
 1. **Open the `SCHEMATA` Folder**
@@ -146,32 +146,25 @@ them.
 
 Steps to Run the Tests Locally
 
-1. **Ensure Deno is Installed**
-   - Make sure you have
-     **[Deno installed globally](https://docs.deno.com/runtime/getting_started/installation/)**
-     on your machine.
-   - Verify the installation by running:
+1. **Install Node.js 24.12.0 or newer**
+   - Verify the installation with `node --version`.
 
-     ```sh
-     deno --version
-     ```
-
-2. **Navigate to the Repository Root**
-
-3. **Run the Test Command**  
-   You can use either of the following commands to execute the schema tests:
+2. **Navigate to the Repository Root and Install Dependencies**
 
    ```sh
-   npm run test
+   npm ci
    ```
 
-   or
+3. **Run the Test Command**
 
    ```sh
-   deno test --allow-read TESTS/schema_tests.ts
+   npm test
    ```
 
-   Both commands execute the same validation process.
+   This runs `node --test TESTS/schema_tests.ts`. Node executes the TypeScript
+   files directly, without a build step. It strips type annotations but does
+   not perform static type checking. The tests still validate the JSON data
+   against the Zod schema.
 
 4. **Review the Output**
    - The test will check all relevant files against the schema.

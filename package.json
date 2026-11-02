@@ -12,16 +12,20 @@
   },
   "license": "CC-BY-4.0",
   "author": "Multilingual Digital Humanities",
+  "type": "module",
   "main": "PROJECTS.json",
   "scripts": {
     "check-links": "lychee --config lychee.toml -m 3 -t 10 ./**/*.json",
     "check-links-new": "lychee --dump '**/*.json' | sort -u | lychee --max-concurrency 32 -m 3 -t 10 -",
     "format": "prettier --ignore-path .gitignore --write .",
     "map-langs": "deno run --allow-read --allow-write TESTS/map_language_codes.ts",
-    "test": "deno test --allow-read TESTS/schema_tests.ts"
+    "test": "node --test TESTS/schema_tests.ts"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
     "zod": "^4.1.12"
+  },
+  "engines": {
+    "node": ">=24.12.0"
   }
 }
