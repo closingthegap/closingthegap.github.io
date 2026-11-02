@@ -280,11 +280,11 @@ Our website is hosted on **GitHub Pages**. Given our strong emphasis on
 **sustainability**, we have designed it to be fully **static**. All data is
 consolidated into a JSON file (**`ENTRIES.json`**), which serves as the
 foundation for rendering the site. This file requires **manual updates**, which
-we perform **once a week**.
+we perform at least **once every 30 days**.
 
 > **Automated Check**  
-> A GitHub Action runs every **Monday and Thursday** to verify whether the
-> frontend is up to date.  
+> A GitHub Action runs every **Monday at 06:09 UTC** to verify that the
+> frontend data was refreshed less than **30 days** ago.  
 > While this workflow checks for outdated data, it **does not update** the site
 > automatically. Manual deployment is still required.
 
