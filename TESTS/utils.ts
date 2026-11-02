@@ -1,8 +1,10 @@
+import { readdirSync } from "node:fs";
+
 export function getPaths(basePath: string): string[] {
   const paths: string[] = [];
 
-  for (const dirEntry of Deno.readDirSync(basePath)) {
-    if (dirEntry.isDirectory) {
+  for (const dirEntry of readdirSync(basePath, { withFileTypes: true })) {
+    if (dirEntry.isDirectory()) {
       const subPath = `${basePath}/${dirEntry.name}`;
       paths.push(...getPaths(subPath));
     } else {

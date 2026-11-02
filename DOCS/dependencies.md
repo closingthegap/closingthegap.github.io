@@ -96,11 +96,11 @@ _To be continued…_
    - **License**: MIT
    - **Description**: The built-in test runner executes the TypeScript schema
      tests directly. Native type stripping does not perform static type checking.
-     Deno is still used by the separate data utility scripts and the frontend
-     freshness test.
+     Node.js also runs the data utility scripts. The frontend branch and its
+     freshness workflow still use Deno.
 
 2. **[Zod](https://github.com/colinhacks/zod)**:
-   - **Version**: 3.x
+   - **Version**: 4.x
    - **License**: MIT
    - **Description**: Zod, whose tagline is "TypeScript-first schema
      validation," provides many convenience features for writing a schema in
@@ -113,7 +113,7 @@ _To be continued…_
      we currently like best.
 
 3. **[Prettier](https://github.com/prettier/prettier)**:
-   - **Version**: 3.x
+   - **Version**: 4.x
    - **License**: MIT
    - **Description**: Prettier is an extremely popular code formatting tool. Our
      workflow involves running most of the files in our repository through
@@ -148,12 +148,14 @@ _To be continued…_
    Node/npm installed, you can download it and find instructions on
    [their website](https://nodejs.org/).
 
-2. **Backend**: The back end code is in the `master` branch. There is also a
+2. **Backend**: The back end code is in the `master` branch. The
    Node/npm setup here installs Prettier and Zod. Run `npm ci` to install them.
    The `format` script formats files with Prettier; `test` runs the TypeScript
    schema tests using Node.js 24.12.0 or newer (`npm test`).
-   Additional tools are needed for the other scripts:
-   - Deno: Required for `npm run map-langs` and the other Deno data utilities.
+   Run `npm run map-langs` to generate the language-code mapping, or
+   `node TESTS/find_current.ts` to review projects whose maintained status may
+   need updating. Both utilities use Node.js.
+   The link-checking scripts require a separate tool:
    - Lychee: See the installation instructions at their
      [GitHub repository](https://github.com/lycheeverse/lychee). There are many
      options for various operating systems. On macOS, for example, Lychee can be
