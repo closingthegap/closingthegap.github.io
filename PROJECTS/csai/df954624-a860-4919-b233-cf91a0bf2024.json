@@ -84,9 +84,7 @@
           ]
         },
         "roles": ["supervision"],
-        "websites": [
-          "https://ancientarabia.huma-num.fr/team"
-        ]
+        "websites": ["https://ancientarabia.huma-num.fr/team"]
       }
     ],
     "research_data": {

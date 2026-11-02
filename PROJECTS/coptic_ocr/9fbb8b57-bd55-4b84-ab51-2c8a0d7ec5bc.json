@@ -14,8 +14,7 @@
     "ref": [],
     "date": [{ "from": "2018", "to": "" }],
     "maintained": true,
-    "websites": [
-      "https://github.com/KELLIA/CopticOCR"],
+    "websites": ["https://github.com/KELLIA/CopticOCR"],
     "project_desc": "The aim of this project is to improve the quality and accessibility of OCR software for Coptic texts and their different fonds using Machine Learning technologies.",
     "places": [
       {

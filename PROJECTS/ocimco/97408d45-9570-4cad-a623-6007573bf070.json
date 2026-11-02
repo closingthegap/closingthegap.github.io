@@ -71,7 +71,9 @@
           "ref": ["https://orcid.org/0000-0002-3245-669X"]
         },
         "roles": ["supervision"],
-        "websites": ["https://www.islamicmanuscript.org/DirectoryOfMembers/Person.aspx?mid=351"]
+        "websites": [
+          "https://www.islamicmanuscript.org/DirectoryOfMembers/Person.aspx?mid=351"
+        ]
       }
     ],
     "research_data": {

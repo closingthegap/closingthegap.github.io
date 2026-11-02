@@ -268,9 +268,7 @@
             "https://ror.org/02sptwz63"
           ]
         },
-        "websites": [
-          "https://ufsn.dk/english/"
-        ]
+        "websites": ["https://ufsn.dk/english/"]
       },
       {
         "relation_type": "member",
