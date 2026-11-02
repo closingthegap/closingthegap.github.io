@@ -62,12 +62,12 @@
 	<table class="mx-auto w-full table-auto border-separate border-spacing-0 bg-ctgtan">
 		<thead class="sticky top-0">
 			<tr class="border-b border-slate-800">
-				<th class="border-b border-r border-slate-800">Project title</th>
+				<th class="border-r border-b border-slate-800">Project title</th>
 				{#each years as year, i}
 					{#if i === years.length - 1}
 						<th class="border-b border-slate-800 px-1 py-1.5 text-sm">’{year.slice(-2)}</th>
 					{:else}
-						<th class="border-b border-r border-slate-800 px-1 py-1.5 text-sm">’{year.slice(-2)}</th
+						<th class="border-r border-b border-slate-800 px-1 py-1.5 text-sm">’{year.slice(-2)}</th
 						>
 					{/if}
 				{/each}
@@ -92,7 +92,7 @@
 							{/if}
 						{/each}
 					{:else}
-						<td class="border-b border-r border-slate-800 px-2 py-0.5"
+						<td class="border-r border-b border-slate-800 px-2 py-0.5"
 							><a href={entryUrl(url)}>{truncateTitle(entry.project.title)}</a></td
 						>
 
@@ -102,7 +102,7 @@
 							{:else if j === years.length - 1}
 								<td class="border-b border-slate-800/25"></td>
 							{:else}
-								<td class="border-b border-r border-slate-800/25"></td>
+								<td class="border-r border-b border-slate-800/25"></td>
 							{/if}
 						{/each}
 					{/if}

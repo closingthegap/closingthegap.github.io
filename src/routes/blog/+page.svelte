@@ -26,7 +26,7 @@
 
 		<div class="grid gap-4">
 			{#each posts as post (post.id)}
-				<div class="rounded bg-white p-4 shadow">
+				<div class="rounded-sm bg-white p-4 shadow-sm">
 					<p class="text-lg font-bold text-ctgblue">
 						<a href={post.link} target="_blank" rel="noopener noreferrer" class="hover:underline">
 							{post.title}

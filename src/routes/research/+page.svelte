@@ -126,7 +126,7 @@
 		{#if upcomingEvents.length}
 			<div class="mb-6 grid gap-4">
 				{#each upcomingEvents as e}
-					<div class="rounded bg-white p-4 shadow">
+					<div class="rounded-sm bg-white p-4 shadow-sm">
 						<p class="text-lg font-bold text-ctgblue">
 							{#if e.link}
 								<a href={e.link} target="_blank" rel="noopener noreferrer" class="hover:underline">
@@ -138,11 +138,11 @@
 						</p>
 
 						{#if e.eventType}
-							<p class="text-xs uppercase tracking-wide text-gray-500">{e.eventType}</p>
+							<p class="text-xs tracking-wide text-gray-500 uppercase">{e.eventType}</p>
 						{/if}
 
 						<p class="text-sm">{e.date} | {e.time} | {e.location}</p>
-						<p class="mt-1 italic text-gray-700">{e.title}</p>
+						<p class="mt-1 text-gray-700 italic">{e.title}</p>
 						{#if e.author}
 							<p class="text-sm text-gray-600">
 								{#if e.eventType === 'conference'}
@@ -168,7 +168,7 @@
 		{#if pastEvents.length}
 			<div class="mb-6 grid gap-4">
 				{#each pastEvents as e}
-					<div class="rounded bg-white p-4 shadow">
+					<div class="rounded-sm bg-white p-4 shadow-sm">
 						<p class="text-lg font-bold text-gray-700">
 							{#if e.link}
 								<a href={e.link} target="_blank" rel="noopener noreferrer" class="hover:underline">
@@ -180,11 +180,11 @@
 						</p>
 
 						{#if e.eventType}
-							<p class="text-xs uppercase tracking-wide text-gray-500">{e.eventType}</p>
+							<p class="text-xs tracking-wide text-gray-500 uppercase">{e.eventType}</p>
 						{/if}
 
 						<p class="text-sm">{e.date} | {e.time} | {e.location}</p>
-						<p class="mt-1 italic text-gray-700">{e.title}</p>
+						<p class="mt-1 text-gray-700 italic">{e.title}</p>
 						{#if e.author}
 							<p class="text-sm text-gray-600">Presented by {e.author}</p>
 						{/if}

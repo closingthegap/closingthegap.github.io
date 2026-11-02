@@ -275,7 +275,9 @@
 		</section>
 
 		<!-- Photo gallery: horizontal scroll strip -->
-		<div class="mb-6 flex snap-x snap-mandatory gap-2 overflow-x-auto rounded bg-white p-2 shadow">
+		<div
+			class="mb-6 flex snap-x snap-mandatory gap-2 overflow-x-auto rounded-sm bg-white p-2 shadow-sm"
+		>
 			{#each photos as photo, i}
 				<a
 					href={photoBase + photo}
@@ -288,7 +290,7 @@
 						alt="Workshop photo {i + 1}"
 						loading={i < 4 ? 'eager' : 'lazy'}
 						decoding="async"
-						class="h-48 w-auto rounded sm:h-64"
+						class="h-48 w-auto rounded-sm sm:h-64"
 					/>
 				</a>
 			{/each}
@@ -343,7 +345,7 @@
 		<!-- Registration closed notice -->
 		<!-- <section class="mb-8">
 			<div
-				class="flex items-start gap-3 rounded-md border-l-4 border-ctgblue bg-white/80 p-4 shadow-sm"
+				class="flex items-start gap-3 rounded-md border-l-4 border-ctgblue bg-white/80 p-4 shadow-xs"
 			>
 				<span class="text-2xl leading-none" aria-hidden="true">✓</span>
 				<div>
@@ -388,26 +390,26 @@
 						aria-selected={activeSession === s.id}
 						class="flex-1 rounded-md border px-4 py-3 text-left transition-colors {activeSession ===
 						s.id
-							? 'border-ctgblue bg-ctgblue text-white shadow'
+							? 'border-ctgblue bg-ctgblue text-white shadow-sm'
 							: 'border-ctgblue/40 bg-white text-ctgblue hover:bg-ctgorange/20'}"
 						on:click={() => (activeSession = s.id)}
 					>
 						<span
-							class="block text-xs font-semibold uppercase tracking-wide {activeSession === s.id
+							class="block text-xs font-semibold tracking-wide uppercase {activeSession === s.id
 								? 'text-ctgorange'
 								: 'text-ctgtan'}"
 						>
 							Session {s.id}
 						</span>
-						<span class="block text-sm font-medium leading-snug">{s.tab}</span>
+						<span class="block text-sm leading-snug font-medium">{s.tab}</span>
 					</button>
 				{/each}
 			</div>
 
 			<!-- Active session panel -->
 			{#if current}
-				<div class="rounded-lg bg-white p-5 shadow">
-					<p class="text-xs font-semibold uppercase tracking-wide text-ctgorange">{current.day}</p>
+				<div class="rounded-lg bg-white p-5 shadow-sm">
+					<p class="text-xs font-semibold tracking-wide text-ctgorange uppercase">{current.day}</p>
 					<h3 class="mt-1 text-lg font-bold text-ctgblue">
 						Session {current.id}: {current.theme}
 					</h3>
@@ -426,13 +428,13 @@
 									</div>
 									<div class="flex-1 rounded-md border border-ctgorange/50 bg-ctgorange/10 p-4">
 										<span
-											class="inline-block rounded bg-ctgorange px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-white"
+											class="inline-block rounded-sm bg-ctgorange px-2 py-0.5 text-xs font-semibold tracking-wide text-white uppercase"
 										>
 											Keynote
 										</span>
 										<p class="mt-2 text-base font-semibold text-ctgblue">{row.name}</p>
 										<p class="mt-1 text-sm text-gray-700">{row.affiliation}</p>
-										<p class="mt-1 text-xs italic text-gray-600">
+										<p class="mt-1 text-xs text-gray-600 italic">
 											{#if row.introducedBy}Introduced by {#if row.introducedByLink}<a
 														href={row.introducedByLink}
 														target="_blank"
@@ -467,7 +469,7 @@
 												<span class="block font-medium text-ctgblue">
 													{row.speaker}
 													{#if 'tbc' in row && row.tbc}
-														<span class="text-xs font-normal italic text-gray-500">(t.b.c.)</span>
+														<span class="text-xs font-normal text-gray-500 italic">(t.b.c.)</span>
 													{/if}
 													{#if row.coauthor}
 														<span class="text-xs font-normal text-gray-500">{row.coauthor}</span>
@@ -488,7 +490,7 @@
 
 										{#if open}
 											<div class="border-t border-ctgblue/10 bg-ctgtan/5 px-4 py-3">
-												<p class="mb-2 text-xs font-semibold uppercase tracking-wide text-ctgtan">
+												<p class="mb-2 text-xs font-semibold tracking-wide text-ctgtan uppercase">
 													Abstract
 												</p>
 												{#each row.abstract ?? [] as para}
@@ -517,7 +519,7 @@
 									</div>
 									<div class="flex-1 rounded-md bg-ctgblue/5 px-4 py-3">
 										<span
-											class="inline-block rounded bg-ctgblue px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-white"
+											class="inline-block rounded-sm bg-ctgblue px-2 py-0.5 text-xs font-semibold tracking-wide text-white uppercase"
 										>
 											Panel
 										</span>
@@ -551,10 +553,10 @@
 		</section>
 
 		<!-- Venue & funding -->
-		<section class="mt-8 rounded-lg bg-white p-5 shadow">
+		<section class="mt-8 rounded-lg bg-white p-5 shadow-sm">
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 				<div>
-					<h3 class="mb-1 text-sm font-semibold uppercase tracking-wide text-ctgtan">Venue</h3>
+					<h3 class="mb-1 text-sm font-semibold tracking-wide text-ctgtan uppercase">Venue</h3>
 					<p class="text-gray-800">
 						Freie Universität Berlin<br />
 						Seminarzentrum L116<br />
@@ -563,7 +565,7 @@
 					</p>
 				</div>
 				<div>
-					<h3 class="mb-1 text-sm font-semibold uppercase tracking-wide text-ctgtan">Funding</h3>
+					<h3 class="mb-1 text-sm font-semibold tracking-wide text-ctgtan uppercase">Funding</h3>
 					<p class="text-gray-800">
 						The event is funded by the Open Science Ambassador-Program of the Berlin University
 						Alliance.

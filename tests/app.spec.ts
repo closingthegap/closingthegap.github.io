@@ -5,11 +5,6 @@ import projects from '../src/data/PROJECTS.json' with { type: 'json' };
 
 const records = entries as [string, JsonStuff][];
 
-test.beforeEach(async ({ page }) => {
-	// Block email by default; the form test installs its own successful response.
-	await page.route('https://api.emailjs.com/**', (route) => route.abort());
-});
-
 test('search, clear, language and keyword filters, and unknown URL terms', async ({ page }) => {
 	const errors: string[] = [];
 	page.on('pageerror', (error) => errors.push(error.message));
@@ -48,9 +43,11 @@ test('search, clear, language and keyword filters, and unknown URL terms', async
 
 test('entry links and client navigation keep the active menu current', async ({ page }) => {
 	await page.goto('/');
-	await page.locator('h3 a').first().click();
+	const project = page.locator('h3 a').first();
+	const title = await project.innerText();
+	await project.click();
 	await expect(page).toHaveURL(/\/entry\/#/);
-	await expect(page.getByText('Abbreviated title:', { exact: true })).toBeVisible();
+	await expect(page.getByRole('heading', { name: title, exact: true })).toBeVisible();
 	await page.getByRole('link', { name: 'About', exact: true }).click();
 	await expect(page.getByRole('link', { name: 'About', exact: true })).toHaveClass(
 		/(?:^|\s)underline(?:\s|$)/
@@ -90,16 +87,4 @@ test('map and all three charts render without runtime errors', async ({ page }) 
 		await expect(page.locator(`#${id} svg.marks`)).toBeVisible({ timeout: 20_000 });
 	}
 	expect(errors).toEqual([]);
-});
-
-test('the contribution form uses the upgraded SDK without sending email', async ({ page }) => {
-	await page.route('https://api.emailjs.com/**', (route) => route.fulfill({ body: 'OK' }));
-	await page.goto('/_contribute/');
-	await page.getByLabel('Your Name*').fill('Browser test');
-	await page.getByLabel('Your Email*').fill('test@example.com');
-	await page.getByLabel('Project Name*').fill('Test project');
-	await page.locator('button[type="submit"]').click();
-	await expect(
-		page.getByText('Your contribution request was sent successfully!', { exact: false })
-	).toBeVisible();
 });

@@ -144,7 +144,7 @@
 			{/each}
 		</div>
 
-		<p class="-mb-1.5 mt-2.5">
+		<p class="mt-2.5 -mb-1.5">
 			<em>Hover on a language code to see the full name</em>
 		</p>
 	{:else if $selectedTab === 'keywords'}
@@ -191,13 +191,13 @@
 				aria-label="Search projects"
 				autocorrect="off"
 				autocapitalize="none"
-				class="w-56 rounded border border-ctgblue bg-gray-100 px-2 py-1"
+				class="w-56 rounded-sm border border-ctgblue bg-gray-100 px-2 py-1 focus:border-blue-600"
 				bind:value={searchTermValue}
 				on:input={handleSearch}
 			/>
 
 			{#if searchTermValue}
-				<button on:click={() => searchTerm.set('')} class="rounded bg-red-900 px-2 text-gray-100"
+				<button on:click={() => searchTerm.set('')} class="rounded-sm bg-red-900 px-2 text-gray-100"
 					>Clear</button
 				>
 			{/if}

@@ -49,16 +49,16 @@
 				on the needs and demands of the community.
 			</p>
 		</div>
-		<div class="mt-8">
+		<div>
 			<h3 class="mb-6 text-center text-2xl">The Team</h3>
 			<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 				<!-- Profile 1 -->
-				<div class="rounded-lg bg-white p-4 text-center shadow">
+				<div class="rounded-lg bg-white p-4 text-center shadow-sm">
 					<a
 						href="https://www.caseyegyptologist.com"
 						target="_blank"
 						rel="noreferrer"
-						class="block rounded-lg bg-white p-4 text-center shadow transition-shadow hover:shadow-lg"
+						class="block rounded-lg bg-white p-4 text-center shadow-sm transition-shadow hover:shadow-lg"
 					>
 						<img
 							src="/team/christian.png"
@@ -76,8 +76,8 @@
 				</div>
 
 				<!-- Profile 2 -->
-				<div class="rounded-lg bg-white p-4 text-center shadow">
-					<!-- <a href="https://www.example.com" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition-shadow"> -->
+				<div class="rounded-lg bg-white p-4 text-center shadow-sm">
+					<!-- <a href="https://www.example.com" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-lg transition-shadow"> -->
 					<img
 						src="/team/xenia.jpg"
 						alt="M. Xenia Kudela"
@@ -94,8 +94,8 @@
 				</div>
 
 				<!-- Profile 3 -->
-				<div class="rounded-lg bg-white p-4 text-center shadow">
-					<!-- <a href="https://www.example.com" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition-shadow"> -->
+				<div class="rounded-lg bg-white p-4 text-center shadow-sm">
+					<!-- <a href="https://www.example.com" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-lg transition-shadow"> -->
 					<img
 						src="/team/aya.jpg"
 						alt="Aibaniz Alieva"
@@ -112,12 +112,12 @@
 				</div>
 
 				<!-- Profile 4 -->
-				<div class="rounded-lg bg-white p-4 text-center shadow">
+				<div class="rounded-lg bg-white p-4 text-center shadow-sm">
 					<a
 						href="https://joudysidobozan.github.io/Joudy-Sido-Bozan/"
 						target="_blank"
 						rel="noreferrer"
-						class="block rounded-lg bg-white p-4 text-center shadow transition-shadow hover:shadow-lg"
+						class="block rounded-lg bg-white p-4 text-center shadow-sm transition-shadow hover:shadow-lg"
 					>
 						<img
 							src="/team/joudy.jpg"
@@ -136,8 +136,8 @@
 				</div>
 
 				<!-- Profile 5 -->
-				<div class="rounded-lg bg-white p-4 text-center shadow">
-					<!-- <a href="https://www.example.com" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition-shadow"> -->
+				<div class="rounded-lg bg-white p-4 text-center shadow-sm">
+					<!-- <a href="https://www.example.com" target="_blank" rel="noreferrer" class="block bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-lg transition-shadow"> -->
 					<img
 						src="/team/jonas.jpg"
 						alt="Jonas Müller-Laackman"
@@ -154,12 +154,12 @@
 				</div>
 
 				<!-- Profile 6 -->
-				<div class="rounded-lg bg-white p-4 text-center shadow">
+				<div class="rounded-lg bg-white p-4 text-center shadow-sm">
 					<a
 						href="https://www.theobeers.com/"
 						target="_blank"
 						rel="noreferrer"
-						class="block rounded-lg bg-white p-4 text-center shadow transition-shadow hover:shadow-lg"
+						class="block rounded-lg bg-white p-4 text-center shadow-sm transition-shadow hover:shadow-lg"
 					>
 						<img
 							src="/team/theo.jpg"
@@ -193,7 +193,7 @@
 							href="/gallery/img1.jpg"
 							target="_blank"
 							rel="noreferrer"
-							class="h-48 w-48 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 shadow transition-transform hover:scale-105"
+							class="h-48 w-48 shrink-0 overflow-hidden rounded-md border border-gray-200 shadow-sm transition-transform hover:scale-105"
 						>
 							<img
 								src="/gallery/img1.jpg"
@@ -207,7 +207,7 @@
 							href="/gallery/img2.jpg"
 							target="_blank"
 							rel="noreferrer"
-							class="h-48 w-48 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 shadow transition-transform hover:scale-105"
+							class="h-48 w-48 shrink-0 overflow-hidden rounded-md border border-gray-200 shadow-sm transition-transform hover:scale-105"
 						>
 							<img
 								src="/gallery/img2.jpg"
@@ -221,7 +221,7 @@
 							href="/gallery/img3.jpg"
 							target="_blank"
 							rel="noreferrer"
-							class="h-48 w-48 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 shadow transition-transform hover:scale-105"
+							class="h-48 w-48 shrink-0 overflow-hidden rounded-md border border-gray-200 shadow-sm transition-transform hover:scale-105"
 						>
 							<img
 								src="/gallery/img3.jpg"
@@ -235,7 +235,7 @@
 							href="/gallery/img4.jpg"
 							target="_blank"
 							rel="noreferrer"
-							class="h-48 w-48 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 shadow transition-transform hover:scale-105"
+							class="h-48 w-48 shrink-0 overflow-hidden rounded-md border border-gray-200 shadow-sm transition-transform hover:scale-105"
 						>
 							<img
 								src="/gallery/img4.jpg"
@@ -249,7 +249,7 @@
 							href="/gallery/img5.jpg"
 							target="_blank"
 							rel="noreferrer"
-							class="h-48 w-48 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 shadow transition-transform hover:scale-105"
+							class="h-48 w-48 shrink-0 overflow-hidden rounded-md border border-gray-200 shadow-sm transition-transform hover:scale-105"
 						>
 							<img
 								src="/gallery/img5.jpg"
@@ -263,7 +263,7 @@
 							href="/gallery/img6.jpg"
 							target="_blank"
 							rel="noreferrer"
-							class="h-48 w-48 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 shadow transition-transform hover:scale-105"
+							class="h-48 w-48 shrink-0 overflow-hidden rounded-md border border-gray-200 shadow-sm transition-transform hover:scale-105"
 						>
 							<img
 								src="/gallery/img6.jpg"

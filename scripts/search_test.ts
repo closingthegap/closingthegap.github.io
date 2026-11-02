@@ -49,10 +49,10 @@ test('building a subset of categories leaves the full taxonomy unchanged', () =>
 });
 
 test('keyword availability uses intersections and tolerates unknown URL terms', () => {
-	const keywords = { a: ['one', 'two'], b: ['two', 'three'], c: ['three'] };
-	deepEqual(getInvalidKeywords(keywords, 'keywords', new Set(['a', 'b'])), new Set(['c']));
+	const keywords = { a: ['one', 'two'], b: ['two', 'three'], c: ['three'], d: ['one'] };
+	deepEqual(getInvalidKeywords(keywords, 'keywords', new Set(['a', 'b'])), new Set(['c', 'd']));
 	deepEqual(
 		getInvalidKeywords(keywords, 'keywords', new Set(['unknown'])),
-		new Set(['a', 'b', 'c'])
+		new Set(['a', 'b', 'c', 'd'])
 	);
 });

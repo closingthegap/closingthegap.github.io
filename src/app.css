@@ -1,6 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss' source('./');
+@plugin '@tailwindcss/forms';
+
+@theme {
+	--color-ctgblue: #2e4a61;
+	--color-ctgorange: #f29559;
+	--color-ctgtan: #b8b08d;
+	--font-fira: 'Fira Sans', sans-serif;
+
+	/* Keep the existing palette when upgrading Tailwind's default colors. */
+	--color-amber-200: #fde68a;
+	--color-blue-600: #2563eb;
+	--color-gray-50: #f9fafb;
+	--color-gray-100: #f3f4f6;
+	--color-gray-200: #e5e7eb;
+	--color-gray-300: #d1d5db;
+	--color-gray-400: #9ca3af;
+	--color-gray-500: #6b7280;
+	--color-gray-600: #4b5563;
+	--color-gray-700: #374151;
+	--color-gray-800: #1f2937;
+	--color-green-600: #16a34a;
+	--color-red-600: #dc2626;
+	--color-red-900: #7f1d1d;
+	--color-slate-800: #1e293b;
+}
+
+@layer base {
+	/* Preserve the existing border and button defaults. */
+	*,
+	::before,
+	::after,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200);
+	}
+	button:not(:disabled),
+	[role='button']:not(:disabled) {
+		cursor: pointer;
+	}
+}
 
 /* latin-ext */
 @font-face {

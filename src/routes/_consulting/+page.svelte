@@ -93,7 +93,7 @@
 						type="text"
 						bind:value={name}
 						required
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 				<div>
@@ -103,7 +103,7 @@
 						type="email"
 						bind:value={email}
 						required
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 			</div>
@@ -116,7 +116,7 @@
 						id="institution"
 						type="text"
 						bind:value={institution}
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 				<div>
@@ -125,7 +125,7 @@
 						id="role"
 						type="text"
 						bind:value={role}
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 			</div>
@@ -137,7 +137,7 @@
 					id="projectTitle"
 					type="text"
 					bind:value={projectTitle}
-					class="mt-1 w-full rounded border-ctgblue p-2"
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 				/>
 			</div>
 			<div>
@@ -146,7 +146,7 @@
 					id="projectDescription"
 					bind:value={projectDescription}
 					rows="4"
-					class="mt-1 w-full rounded border-ctgblue p-2"></textarea>
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"></textarea>
 			</div>
 
 			<!-- Discipline & Geo-Temporal Focus -->
@@ -157,7 +157,7 @@
 						id="discipline"
 						type="text"
 						bind:value={discipline}
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 				<div>
@@ -166,7 +166,7 @@
 						id="geoTemporalFocus"
 						type="text"
 						bind:value={geoTemporalFocus}
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 			</div>
@@ -204,7 +204,7 @@
 						id="supportOther"
 						type="text"
 						bind:value={supportOther}
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 			{/if}
@@ -219,7 +219,7 @@
 					bind:value={consultationGoals}
 					required
 					rows="3"
-					class="mt-1 w-full rounded border-ctgblue p-2"></textarea>
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"></textarea>
 			</div>
 
 			<!-- DH Experience -->
@@ -229,7 +229,7 @@
 					id="dhExperience"
 					bind:value={dhExperience}
 					required
-					class="mt-1 w-full rounded border-ctgblue p-2"
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 				>
 					<option value="">-- Select --</option>
 					<option value="Software Developer">Software Developer</option>
@@ -249,7 +249,7 @@
 					type="text"
 					bind:value={toolsUsed}
 					placeholder="e.g., Voyant, GIS, Python"
-					class="mt-1 w-full rounded border-ctgblue p-2"
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 				/>
 			</div>
 
@@ -291,7 +291,7 @@
 					id="preferredTimes"
 					type="text"
 					bind:value={preferredTimes}
-					class="mt-1 w-full rounded border-ctgblue p-2"
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 				/>
 			</div>
 
@@ -302,7 +302,7 @@
 					id="comments"
 					bind:value={comments}
 					rows="2"
-					class="mt-1 w-full rounded border-ctgblue p-2"></textarea>
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"></textarea>
 			</div>
 
 			<!-- Submit -->

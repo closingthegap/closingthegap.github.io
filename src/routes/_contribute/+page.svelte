@@ -70,7 +70,7 @@
 						type="text"
 						bind:value={name}
 						required
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 				<div>
@@ -80,7 +80,7 @@
 						type="email"
 						bind:value={email}
 						required
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 			</div>
@@ -92,7 +92,7 @@
 					type="text"
 					bind:value={project}
 					required
-					class="mt-1 w-full rounded border-ctgblue p-2"
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 				/>
 			</div>
 
@@ -103,7 +103,7 @@
 						id="institution"
 						type="text"
 						bind:value={institution}
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 				<div>
@@ -112,7 +112,7 @@
 						id="pi"
 						type="text"
 						bind:value={pi}
-						class="mt-1 w-full rounded border-ctgblue p-2"
+						class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 					/>
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 					type="url"
 					bind:value={url}
 					placeholder="https://example.com (optional)"
-					class="mt-1 w-full rounded border-ctgblue p-2"
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"
 				/>
 			</div>
 
@@ -134,7 +134,7 @@
 					id="comments"
 					bind:value={comments}
 					rows="4"
-					class="mt-1 w-full rounded border-ctgblue p-2"></textarea>
+					class="mt-1 w-full rounded-sm border-ctgblue p-2 focus:border-blue-600"></textarea>
 			</div>
 
 			<button

@@ -79,7 +79,7 @@
 		{#if upcoming.length}
 			<div class="mb-6 grid gap-4">
 				{#each upcoming as e}
-					<div class="rounded bg-white p-4 shadow">
+					<div class="rounded-sm bg-white p-4 shadow-sm">
 						<p class="text-lg font-bold text-ctgblue">
 							{#if e.link}
 								<a href={e.link} target="_blank" rel="noopener noreferrer" class="hover:underline">
@@ -102,7 +102,7 @@
 		{#if past.length}
 			<div class="mb-6 grid gap-4">
 				{#each past as e}
-					<div class="rounded bg-white p-4 shadow">
+					<div class="rounded-sm bg-white p-4 shadow-sm">
 						<p class="text-lg font-bold text-gray-700">
 							{#if e.link}
 								<a href={e.link} target="_blank" rel="noopener noreferrer" class="hover:underline">
