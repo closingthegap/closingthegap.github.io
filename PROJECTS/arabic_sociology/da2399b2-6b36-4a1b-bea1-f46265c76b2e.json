@@ -15,8 +15,8 @@
     "date": [{ "from": "2025", "to": "" }],
     "maintained": true,
     "websites": [
-        "https://arabicsociology.net/projects/test-project",
-        "https://arabicsociology.net"
+      "https://arabicsociology.net/projects/test-project",
+      "https://arabicsociology.net"
     ],
     "project_desc": "The project explores how sociological concepts have been used in various times and places and thus began to be understood in different ways. The project is designed to produce a critical, historically informed, and comparative lexicon of approximately 60 key concepts as used in Arabic and English and, if pertinent, French—focusing on the Arab World and the two main colonial languages of the region. ",
     "places": [
@@ -84,7 +84,9 @@
       },
       "publications": { "open_access": 0, "licensing": [] },
       "data": {
-        "datatypes": [], "repositories": [] }
+        "datatypes": [],
+        "repositories": []
+      }
     },
     "stack": {
       "database": [],

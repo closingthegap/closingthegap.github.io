@@ -73,7 +73,9 @@
           ]
         },
         "roles": ["supervision"],
-        "websites": ["https://www.languagesciences.cam.ac.uk/staff/dr-ergin-opengin"]
+        "websites": [
+          "https://www.languagesciences.cam.ac.uk/staff/dr-ergin-opengin"
+        ]
       }
     ],
     "research_data": {

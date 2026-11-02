@@ -189,11 +189,7 @@
       "languages": []
     },
     "policies": [{ "description": "", "ref": [] }],
-    "keywords": [
-      "lexicon",
-      "manuscript",
-      "translation"
-    ],
+    "keywords": ["lexicon", "manuscript", "translation"],
     "category": "tools_and_analysis",
     "comment": ""
   }
