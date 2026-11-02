@@ -20,10 +20,10 @@ jobs:
         with:
           ref: frontend
 
-      - name: Set up Deno
-        uses: denoland/setup-deno@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          deno-version: v2.x
+          node-version: 24
 
       - name: Run test
-        run: deno test --allow-read deno/date_test.ts
+        run: node --test scripts/date_test.ts
