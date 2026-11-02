@@ -19,7 +19,7 @@
 	},
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",
-		"deno": "^2.2.6",
+		"deno": "^2.9.6",
 		"leaflet": "^1.9.4",
 		"vega-embed": "^7.0.2"
 	},
