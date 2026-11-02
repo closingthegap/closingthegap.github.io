@@ -1,16 +1,8 @@
 {
 	"extends": "$app/tsconfig",
 	"compilerOptions": {
-		"allowJs": true,
-		"checkJs": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true,
-		"noEmit": true,
-		"allowImportingTsExtensions": true
+		"strict": true
 	},
 	"include": ["src", "scripts", "*.js", "*.ts", "tests"],
 	"exclude": ["node_modules", "build", ".svelte-kit"]
