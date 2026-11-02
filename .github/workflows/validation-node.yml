@@ -1,4 +1,4 @@
-name: Schema validation with Deno
+name: Schema validation with Node.js
 
 on:
   pull_request:
@@ -16,13 +16,14 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Set up Deno
-        uses: denoland/setup-deno@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          deno-version: v2.x
+          node-version: 24
+          cache: npm
 
       - name: Install dependencies
-        run: deno install
+        run: npm ci
 
       - name: Run tests
-        run: deno test --allow-read TESTS/schema_tests.ts
+        run: npm test

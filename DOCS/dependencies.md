@@ -91,16 +91,13 @@ _To be continued…_
 
 ## Backend Dependencies
 
-1. **[Deno](https://github.com/denoland/deno)**:
-   - **Version**: 1.x
+1. **[Node.js](https://nodejs.org/)**:
+   - **Version**: 24.12.0 or newer
    - **License**: MIT
-   - **Description**: Deno serves as a runtime and test runner for JavaScript
-     and TypeScript. We use it only to run tests, essentially verifying the JSON
-     files in our database against the schema (which is written in TypeScript).
-   - **Contingency**: Deno is another mature open-source project, which should
-     remain active and usable in the near to medium term. In any case, there are
-     other TypeScript test runners that we could use if needed, such as
-     [Bun](https://github.com/oven-sh/bun).
+   - **Description**: The built-in test runner executes the TypeScript schema
+     tests directly. Native type stripping does not perform static type checking.
+     Deno is still used by the separate data utility scripts and the frontend
+     freshness test.
 
 2. **[Zod](https://github.com/colinhacks/zod)**:
    - **Version**: 3.x
@@ -152,14 +149,11 @@ _To be continued…_
    [their website](https://nodejs.org/).
 
 2. **Backend**: The back end code is in the `master` branch. There is also a
-   Node/npm setup here, which is used for only one dependency, Prettier. Two
-   important scripts are defined in `package.json`: `format`, which runs most
-   files in the repository through Prettier; and `test`, which uses Deno to run
-   tests found in the `TESTS` directory. There are a couple of dependencies to
-   be installed separately:
-   - Deno: See [the website](https://deno.com/) for download options,
-     installation instructions, etc. Once you have Deno set up on your machine,
-     you should be able simply to call `npm run test` in the `master` branch.
+   Node/npm setup here installs Prettier and Zod. Run `npm ci` to install them.
+   The `format` script formats files with Prettier; `test` runs the TypeScript
+   schema tests using Node.js 24.12.0 or newer (`npm test`).
+   Additional tools are needed for the other scripts:
+   - Deno: Required for `npm run map-langs` and the other Deno data utilities.
    - Lychee: See the installation instructions at their
      [GitHub repository](https://github.com/lycheeverse/lychee). There are many
      options for various operating systems. On macOS, for example, Lychee can be

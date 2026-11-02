@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { z } from "zod";
 
 // Set version here, validate everywhere else!
@@ -8,7 +9,7 @@ const isoCode = /^[a-z]{3}$/; // Can we do better than this?
 const latLng = /^-?\d{1,3}(\.\d{1,5})?$/;
 
 // Build list of valid keywords
-const keywordsFile = Deno.readTextFileSync("KEYWORDS/KEYWORDS.json");
+const keywordsFile = readFileSync("KEYWORDS/KEYWORDS.json", "utf8");
 const keywordsObj: Record<string, string[]> = JSON.parse(keywordsFile);
 export const keywords = Object.values(keywordsObj).flat();
 
