@@ -1,3 +1,4 @@
+import { readFileSync, writeFileSync } from "node:fs";
 import { getPaths } from "./utils.ts";
 
 const projectPaths = getPaths("PROJECTS");
@@ -5,7 +6,7 @@ const projectPaths = getPaths("PROJECTS");
 let langs: string[] = [];
 
 for (const path of projectPaths) {
-  const projectFile = Deno.readTextFileSync(path);
+  const projectFile = readFileSync(path, "utf8");
   const projectObj = JSON.parse(projectFile);
 
   const projectLangs: string[] = projectObj.project.lang;
@@ -18,7 +19,7 @@ const langsSet = new Set(langs);
 const langsConsolidated = Array.from(langsSet);
 langsConsolidated.sort();
 
-const fullLangsFile = Deno.readTextFileSync("TESTS/language_codes_all.json");
+const fullLangsFile = readFileSync("TESTS/language_codes_all.json", "utf8");
 const fullLangs: Record<string, string> = JSON.parse(fullLangsFile);
 
 const selectedLangs: Record<string, string> = {};
@@ -28,4 +29,4 @@ for (const lang of langsConsolidated) {
 }
 
 const stringified = JSON.stringify(selectedLangs, null, 2);
-Deno.writeTextFileSync("TESTS/language_codes_selected.json", stringified);
+writeFileSync("TESTS/language_codes_selected.json", stringified);

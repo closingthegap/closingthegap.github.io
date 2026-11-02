@@ -18,7 +18,7 @@
     "check-links": "lychee --config lychee.toml -m 3 -t 10 ./**/*.json",
     "check-links-new": "lychee --dump '**/*.json' | sort -u | lychee --max-concurrency 32 -m 3 -t 10 -",
     "format": "prettier --ignore-path .gitignore --write .",
-    "map-langs": "deno run --allow-read --allow-write TESTS/map_language_codes.ts",
+    "map-langs": "node TESTS/map_language_codes.ts",
     "test": "node --test TESTS/schema_tests.ts"
   },
   "devDependencies": {

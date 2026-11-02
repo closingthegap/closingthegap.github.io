@@ -1,9 +1,10 @@
+import { readFileSync } from "node:fs";
 import { getPaths } from "./utils.ts";
 
 const projectPaths = getPaths("PROJECTS");
 
 for (const path of projectPaths) {
-  const projectFile = Deno.readTextFileSync(path);
+  const projectFile = readFileSync(path, "utf8");
   const projectObj = JSON.parse(projectFile);
 
   const projectType = projectObj.project.type;

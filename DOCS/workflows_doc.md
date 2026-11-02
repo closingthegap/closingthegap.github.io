@@ -251,9 +251,9 @@ To update the dependencies:
    `package-lock.json` file, which is responsible for ensuring consistent
    installations across different environments.
 
-> 🛈 Note: Some tools used in the project, like `deno` and `lychee`, are not
-> managed via npm and must be updated separately using their respective package
-> managers or installers.
+> 🛈 Note: Lychee is not managed via npm and must be updated separately.
+> The frontend freshness workflow still uses Deno to run the test on the
+> `frontend` branch; it is separate from the Node.js tests and utilities on `master`.
 
 ## Adding Contributors
 
