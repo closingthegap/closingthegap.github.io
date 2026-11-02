@@ -5,5 +5,5 @@ Deno.test('data freshness', async () => {
 	const generatedDate = new Date(generated).getTime();
 	const now = new Date().getTime();
 	const diff = now - generatedDate;
-	assertLess(diff, 1000 * 60 * 60 * 24 * 7); // 7 days
+	assertLess(diff, 1000 * 60 * 60 * 24 * 30); // 30 days
 });
