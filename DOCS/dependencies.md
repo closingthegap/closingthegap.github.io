@@ -96,8 +96,8 @@ _To be continued…_
    - **License**: MIT
    - **Description**: The built-in test runner executes the TypeScript schema
      tests directly. Native type stripping does not perform static type checking.
-     Node.js also runs the data utility scripts. The frontend branch and its
-     freshness workflow still use Deno.
+     Node.js also runs the data utility scripts, frontend archive script, and
+     frontend freshness test.
 
 2. **[Zod](https://github.com/colinhacks/zod)**:
    - **Version**: 4.x

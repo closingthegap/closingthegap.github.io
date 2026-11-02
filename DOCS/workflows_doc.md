@@ -252,8 +252,9 @@ To update the dependencies:
    installations across different environments.
 
 > 🛈 Note: Lychee is not managed via npm and must be updated separately.
-> The frontend freshness workflow still uses Deno to run the test on the
-> `frontend` branch; it is separate from the Node.js tests and utilities on `master`.
+> The frontend freshness workflow uses Node.js 24 to run
+> `node --test scripts/date_test.ts` after checking out the `frontend` branch.
+> This test uses only Node.js built-ins, so no dependency installation is needed.
 
 ## Adding Contributors
 
