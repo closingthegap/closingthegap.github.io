@@ -13,16 +13,19 @@
 	} from '#lib/utils.ts';
 	import type { JsonStuff } from '#lib/utils.ts';
 
-	export let keywordsCategorized: Record<string, string[]>;
-	export let languages: string[];
+	interface Props {
+		keywordsCategorized: Record<string, string[]>;
+		languages: string[];
+	}
+
+	const { keywordsCategorized, languages }: Props = $props();
 
 	const entries = entriesRaw as [string, JsonStuff][];
 
-	let searchTermValue = '';
-	$: searchTermValue = $searchTerm;
+	let searchTermValue = $derived($searchTerm);
 
 	const keywordsMap = getKeywords(entries);
-	$: keywordsToDisable = getInvalidKeywords(keywordsMap, $selectedTab, $selectedTerms);
+	const keywordsToDisable = $derived(getInvalidKeywords(keywordsMap, $selectedTab, $selectedTerms));
 
 	let debounce: ReturnType<typeof setTimeout>;
 	onDestroy(() => clearTimeout(debounce));
@@ -37,49 +40,24 @@
 		}, 500);
 	}
 
-	function validate(
-		keywords: Record<string, string[]>,
-		langs: string[],
-		selections: Set<string>,
-		tab: string
-	) {
-		if (tab === 'search') {
-			return false;
-		}
+	// Discard unknown URL terms as a side effect, outside derived calculations.
+	$effect(() => {
+		if ($selectedTab === 'search') return;
+		const established =
+			$selectedTab === 'keywords' ? Object.values(keywordsCategorized).flat() : languages;
+		if (established.length === 0) return;
+		const validTerms = new Set([...$selectedTerms].filter((term) => established.includes(term)));
+		if (validTerms.size !== $selectedTerms.size) selectedTerms.set(validTerms);
+	});
 
-		const keywordsFlat = Object.values(keywords).flat();
-		const established = tab === 'keywords' ? keywordsFlat : langs;
-
-		// Race condition: langs, at least, could still be empty
-		// Function will run again
-		if (established.length === 0) {
-			return false;
-		}
-
-		for (const selection of selections) {
-			if (!established.includes(selection)) {
-				selectedTerms.update((value) => {
-					value.delete(selection);
-					return value;
-				});
-			}
-		}
-
-		if (selections.size === 0) {
-			return false;
-		} else {
-			return true;
-		}
-	}
-
-	$: validSelection = validate(keywordsCategorized, languages, $selectedTerms, $selectedTab);
+	const validSelection = $derived($selectedTab !== 'search' && $selectedTerms.size > 0);
 </script>
 
 <div class="mb-3.5 rounded-lg bg-ctgtan p-4">
 	<div class="mb-4 border-b border-b-slate-800">
 		<div class="flex gap-2 text-lg font-normal">
 			<button
-				on:click={() => {
+				onclick={() => {
 					selectedTab.set('search');
 					resetHash();
 				}}
@@ -92,7 +70,7 @@
 			</button>
 
 			<button
-				on:click={() => {
+				onclick={() => {
 					selectedTab.set('keywords');
 					resetHash();
 				}}
@@ -105,7 +83,7 @@
 			</button>
 
 			<button
-				on:click={() => {
+				onclick={() => {
 					selectedTab.set('languages');
 					resetHash();
 				}}
@@ -121,8 +99,7 @@
 
 	{#if $selectedTab !== 'search' && validSelection}
 		<p class="-mt-1 mb-3.5">
-			<button on:click={resetHash} class="font-normal text-red-900 underline"
-				>Clear selection</button
+			<button onclick={resetHash} class="font-normal text-red-900 underline">Clear selection</button
 			>
 		</p>
 	{/if}
@@ -131,7 +108,7 @@
 		<div class="flex flex-wrap gap-2.5 text-sm">
 			{#each languages as language}
 				<button
-					on:click={() => updateHash('languages', language)}
+					onclick={() => updateHash('languages', language)}
 					class="rounded-md border px-2 py-0.5 font-mono hover:border-ctgblue hover:bg-ctgblue hover:text-gray-50"
 					class:bg-ctgblue={$selectedTerms.has(language)}
 					class:border-ctgblue={$selectedTerms.has(language)}
@@ -157,7 +134,7 @@
 				<div class="flex flex-wrap gap-2.5 text-sm lg:w-4/5 xl:w-5/6">
 					{#each keywordsCategorized[category] as keyword}
 						<button
-							on:click={() => updateHash('keywords', keyword)}
+							onclick={() => updateHash('keywords', keyword)}
 							class="rounded-md border px-2 py-0.5 font-mono"
 							class:bg-ctgblue={$selectedTerms.has(keyword)}
 							class:border-ctgblue={$selectedTerms.has(keyword)}
@@ -193,11 +170,11 @@
 				autocapitalize="none"
 				class="w-56 rounded-sm border border-ctgblue bg-gray-100 px-2 py-1 focus:border-blue-600"
 				bind:value={searchTermValue}
-				on:input={handleSearch}
+				oninput={handleSearch}
 			/>
 
 			{#if searchTermValue}
-				<button on:click={() => searchTerm.set('')} class="rounded-sm bg-red-900 px-2 text-gray-100"
+				<button onclick={() => searchTerm.set('')} class="rounded-sm bg-red-900 px-2 text-gray-100"
 					>Clear</button
 				>
 			{/if}

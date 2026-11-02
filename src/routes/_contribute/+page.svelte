@@ -1,18 +1,18 @@
 <script>
 	import emailjs from '@emailjs/browser';
 
-	let name = '';
-	let email = '';
-	let project = '';
-	let institution = '';
-	let pi = '';
-	let url = '';
-	let comments = '';
+	let name = $state('');
+	let email = $state('');
+	let project = $state('');
+	let institution = $state('');
+	let pi = $state('');
+	let url = $state('');
+	let comments = $state('');
 	const formType = 'contributor'; // Predefined as "contributor"
 
-	let success = false;
-	let error = '';
-	let sending = false;
+	let success = $state(false);
+	let error = $state('');
+	let sending = $state(false);
 
 	/** @param {Event} event */
 	const sendContributorRequest = async (event) => {
@@ -59,7 +59,7 @@
 
 <div class="flex justify-center px-4">
 	<div class="mb-4 w-full max-w-6xl rounded-lg bg-ctgtan p-4">
-		<form on:submit|preventDefault={sendContributorRequest}>
+		<form onsubmit={sendContributorRequest}>
 			<h2 class="mb-3 text-xl font-medium">Become a Contributor</h2>
 
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2">

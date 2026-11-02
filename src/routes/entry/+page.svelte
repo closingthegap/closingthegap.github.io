@@ -7,24 +7,24 @@
 	import projectsRaw from '../../data/PROJECTS.json';
 	import entriesRaw from '../../data/ENTRIES.json';
 
-	let title = '';
-	let places: PlaceData[] = [];
-	let langs: string[] = [];
-	let desc = '';
-	let keywords: string[] = [];
-	let jsonLink = '';
-	let websites: string[] = [];
-	let abbr = '';
-	let entityType = '';
-	let periods: DateRange[] = [];
-	let relatedInsts: Institution[] = [];
-	let relatedEnts: RelatedEntity[] = [];
-	let contacts: Contact[] = [];
-	let researchLangs: string[] = [];
+	let title = $state('');
+	let places: PlaceData[] = $state([]);
+	let langs: string[] = $state([]);
+	let desc = $state('');
+	let keywords: string[] = $state([]);
+	let jsonLink = $state('');
+	let websites: string[] = $state([]);
+	let abbr = $state('');
+	let entityType = $state('');
+	let periods: DateRange[] = $state([]);
+	let relatedInsts: Institution[] = $state([]);
+	let relatedEnts: RelatedEntity[] = $state([]);
+	let contacts: Contact[] = $state([]);
+	let researchLangs: string[] = $state([]);
 
-	$: entityCap = entityType.charAt(0).toUpperCase() + entityType.slice(1);
+	const entityCap = $derived(entityType.charAt(0).toUpperCase() + entityType.slice(1));
 
-	let loading = true;
+	let loading = $state(true);
 
 	onMount(() => {
 		const hash = window.location.hash;
@@ -75,7 +75,7 @@
 </script>
 
 <svelte:window
-	on:hashchange={() => {
+	onhashchange={() => {
 		location.reload();
 	}}
 />

@@ -13,8 +13,8 @@
 		eventType?: string;
 	}
 
-	let upcoming: EventItem[] = [];
-	let past: EventItem[] = [];
+	let upcoming: EventItem[] = $state([]);
+	let past: EventItem[] = $state([]);
 
 	const SHEET_ID = '1TwBvYnygSy1t4CSJHtiYBewntAPiVR5fAvjdeJwelvE';
 	const API_KEY = 'AIzaSyD_uAmMav0SiCFz4FRrixvRyGNgsBBhG2c';

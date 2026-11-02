@@ -1,28 +1,28 @@
 <script>
 	import emailjs from '@emailjs/browser';
 
-	let name = '';
-	let email = '';
-	let institution = '';
-	let role = '';
-	let projectTitle = '';
-	let projectDescription = '';
-	let discipline = '';
-	let geoTemporalFocus = '';
+	let name = $state('');
+	let email = $state('');
+	let institution = $state('');
+	let role = $state('');
+	let projectTitle = $state('');
+	let projectDescription = $state('');
+	let discipline = $state('');
+	let geoTemporalFocus = $state('');
 	/** @type {string[]} */
-	let supportNeeds = [];
-	let supportOther = '';
-	let consultationGoals = '';
-	let dhExperience = '';
-	let toolsUsed = '';
-	let followUpMethod = '';
-	let preferredTimes = '';
-	let comments = '';
+	let supportNeeds = $state([]);
+	let supportOther = $state('');
+	let consultationGoals = $state('');
+	let dhExperience = $state('');
+	let toolsUsed = $state('');
+	let followUpMethod = $state('');
+	let preferredTimes = $state('');
+	let comments = $state('');
 	const formType = 'consultation';
 
-	let success = false;
-	let error = '';
-	let sending = false;
+	let success = $state(false);
+	let error = $state('');
+	let sending = $state(false);
 
 	/** @param {Event} event */
 	const sendConsultationRequest = async (event) => {
@@ -81,7 +81,7 @@
 
 <div class="flex justify-center px-4">
 	<div class="mb-4 w-full max-w-6xl rounded-lg bg-ctgtan p-4">
-		<form on:submit|preventDefault={sendConsultationRequest} class="">
+		<form onsubmit={sendConsultationRequest} class="">
 			<h2 class="mb-3 text-xl font-medium">Consultation Request Form</h2>
 
 			<!-- Personal Info -->

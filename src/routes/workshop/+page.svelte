@@ -243,11 +243,11 @@
 	];
 
 	// --- Interactive state -----------------------------------------------
-	let activeSession = 1;
+	let activeSession = $state(1);
 
 	// Track which abstract panels are open, keyed by "sessionId-rowIndex".
 	/** @type {Record<string, boolean>} */
-	let openAbstracts = {};
+	let openAbstracts = $state({});
 
 	/** @param {number} sessionId @param {number} rowIndex */
 	const toggleAbstract = (sessionId, rowIndex) => {
@@ -255,7 +255,7 @@
 		openAbstracts = { ...openAbstracts, [key]: !openAbstracts[key] };
 	};
 
-	$: current = sessions.find((s) => s.id === activeSession);
+	const current = $derived(sessions.find((s) => s.id === activeSession));
 </script>
 
 <div class="flex justify-center px-4">
@@ -392,7 +392,7 @@
 						s.id
 							? 'border-ctgblue bg-ctgblue text-white shadow-sm'
 							: 'border-ctgblue/40 bg-white text-ctgblue hover:bg-ctgorange/20'}"
-						on:click={() => (activeSession = s.id)}
+						onclick={() => (activeSession = s.id)}
 					>
 						<span
 							class="block text-xs font-semibold tracking-wide uppercase {activeSession === s.id
@@ -463,7 +463,7 @@
 										<button
 											class="flex w-full items-start justify-between gap-3 bg-white px-4 py-3 text-left hover:bg-ctgtan/10"
 											aria-expanded={open}
-											on:click={() => toggleAbstract(current.id, i)}
+											onclick={() => toggleAbstract(current.id, i)}
 										>
 											<span>
 												<span class="block font-medium text-ctgblue">

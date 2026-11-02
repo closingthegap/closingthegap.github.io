@@ -20,9 +20,9 @@
 		rawDate: Date;
 	}
 
-	let upcomingEvents: EventItem[] = [];
-	let pastEvents: EventItem[] = [];
-	let publications: Publication[] = [];
+	let upcomingEvents: EventItem[] = $state([]);
+	let pastEvents: EventItem[] = $state([]);
+	let publications: Publication[] = $state([]);
 
 	const SHEET_ID = '1TwBvYnygSy1t4CSJHtiYBewntAPiVR5fAvjdeJwelvE';
 	const API_KEY = 'AIzaSyD_uAmMav0SiCFz4FRrixvRyGNgsBBhG2c';

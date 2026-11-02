@@ -9,8 +9,7 @@
 		filterPlaces,
 		getKeywords,
 		getLanguages,
-		handleHash,
-		updateHash
+		handleHash
 	} from '#lib/utils.ts';
 
 	import type { JsonStuff } from '#lib/utils.ts';
@@ -50,8 +49,7 @@
 
 		for (const term of selectedTerms) {
 			if (!map[term]) {
-				updateHash(selectedTab, term);
-				return entries;
+				continue;
 			}
 
 			const newMatches = map[term];
@@ -65,7 +63,7 @@
 			matches = matches.filter((value) => newMatches.includes(value));
 		}
 
-		return entries.filter(([url]) => matches.includes(url));
+		return firstIteration ? entries : entries.filter(([url]) => matches.includes(url));
 	}
 
 	function removeArticles(title: string): string {
@@ -81,13 +79,13 @@
 		);
 	}
 
-	$: filtered = filterEntries(entries, $searchTerm, $selectedTab, $selectedTerms);
-	$: sortedFiltered = customSort(filtered);
+	const filtered = $derived(filterEntries(entries, $searchTerm, $selectedTab, $selectedTerms));
+	const sortedFiltered = $derived(customSort(filtered));
 
 	afterNavigate(handleHash);
 </script>
 
-<svelte:window on:hashchange={handleHash} />
+<svelte:window onhashchange={handleHash} />
 
 <svelte:head>
 	<title>Closing the Gap in Non-Latin-Script Data – Projects</title>

@@ -9,22 +9,37 @@
 	import Link from '#lib/svg/Link.svelte';
 	import Pin from '#lib/svg/Pin.svelte';
 
-	export let title: string;
-	export let description: string;
-	export let periods: Record<string, string>[];
-	export let places: JsonStuff[];
-	export let languages: string[];
-	export let websiteLinks: string[];
-	export let url: string;
-	export let lastEdited: string;
-	export let keywords: string[];
-	export let uuid: string;
+	interface Props {
+		title: string;
+		description: string;
+		periods: Record<string, string>[];
+		places: JsonStuff[];
+		languages: string[];
+		websiteLinks: string[];
+		url: string;
+		lastEdited: string;
+		keywords: string[];
+		uuid: string;
+	}
 
-	$: realPeriods = periods.filter((period) => period.from);
+	const {
+		title,
+		description,
+		periods,
+		places,
+		languages,
+		websiteLinks,
+		url,
+		lastEdited,
+		keywords,
+		uuid
+	}: Props = $props();
+
+	const realPeriods = $derived(periods.filter((period) => period.from));
 
 	const prefix = 'https://github.com/closingthegap/closingthegap.github.io/tree/master/PROJECTS/';
-	$: suffix = url.split('/PROJECTS/')[1];
-	$: jsonLink = prefix + suffix;
+	const suffix = $derived(url.split('/PROJECTS/')[1]);
+	const jsonLink = $derived(prefix + suffix);
 </script>
 
 <div class="mb-auto w-[22.5rem] rounded-lg bg-ctgtan text-base lg:w-96">
